@@ -25,7 +25,7 @@ public class Person {
 	@OneToOne(cascade = CascadeType.ALL) //@JoinColumn(name= "id_Address", nullable=false)
 	private Address address;
 	
-	@OneToMany @JoinColumn(name="id_persone")
+	@OneToMany @JoinColumn(name="id_person")
 	private List<Act> acts =new ArrayList<>();
 	
 //	@OneToMany  @JoinColumn(name="id_person")

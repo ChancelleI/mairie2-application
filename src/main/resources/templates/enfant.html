@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap/bootstrap.css">
+    <!-- <link rel="stylesheet" href="bootstrap/style.css"> -->
+    <title>acte naissance</title>
+</head>
+
+<style>
+    body {
+        background-color: #C0C001;
+    }
+    
+    fieldset {
+        border-radius: 5px;
+        border: 1px solid #a6a6a6;
+        padding: 5px;
+        margin-top: 100px;
+        height: 90%;
+        width: 100%;
+    }
+    
+    button {
+        background-color: #0F823C;
+        margin-top: 70px;
+        border-radius: 25px;
+        padding: 10px;
+        margin-right: 200px;
+        width: 200px;
+        cursor: pointer;
+        transition: .7s;
+        outline: none;
+        border: 5px solid #CF0921;
+        color: beige;
+        font-size: 25px;
+        font-weight: bolder;
+        display: block;
+    }
+    
+    button:hover {
+        background-color: #C0C001;
+    }
+    
+    button a {
+        color: beige;
+    }
+    
+    button a:hover {
+        text-decoration: none;
+        color: beige;
+    }
+    
+    #sexe {
+        padding: 8px;
+        width: 295px;
+        border-radius: 5px;
+        border: 1px;
+        transition: .7s;
+    }
+    
+    #sexe:hover {
+        border-color: #D5DCFC;
+    }
+</style>
+
+<body>
+    <div class="container-fluid" id="naiss">
+        <h1 class="text-center">enregistrer une naissance</h1>
+        <div class="row">
+            <!-- <fieldset> -->
+            <div class="col-md-3">
+                <fieldset>
+                    <legend>
+                        <h3>informations sur l'enfant</h3>
+                    </legend>
+                    <form action="" method="post" class="form" id="form1">
+
+                        <div class="form-group">
+                            <label for="numero enfant">numero</label>
+                            <input type="number" class="form-control" id="num">
+                        </div>
+                        <div class="form-group">
+                            <label for="nom">nom de l'enfant</label>
+                            <input type="text" class="form-control" id="nom">
+                        </div>
+                        <div class="form-group">
+                            <label for="date naissance">date naissance</label>
+                            <input type="date" class="form-control" id="date">
+                        </div>
+                        <div class="form-group">
+                            <label for="lieu naissance">lieu naissance</label>
+                            <input type="text" class="form-control" id="lieu">
+                        </div>
+                        <div class="mb-4 pb-2">
+                            <label for="sexe">sexe de l'enfant</label>
+                            <!-- <input type="select" class="form-control" id="sexe"> -->
+                            <select class="select" id="sexe">
+                            <option value="feminin">feminin</option> 
+                            <option value="masculin">masculin</option> 
+                            </select>
+
+
+                        </div>
+                    </form>
+                </fieldset>
+            </div>
+
+            <div class="col-md-3">
+                <fieldset>
+                    <legend>
+                        <h3>information sur le père</h3>
+                    </legend>
+                    <form action="" method="post" class="form" id="form2">
+
+                        <div class="form-group">
+                            <label for="nom pere">nom du pere</label>
+                            <input type="text" class="form-control" id="pere">
+                        </div>
+                        <div class="form-group">
+                            <label for="naissance pere">lieu de naissance du pere</label>
+                            <input type="text" class="form-control" id="pere">
+                        </div>
+                        <div class="form-group">
+                            <label for="domicil">date naissance du pere</label>
+                            <input type="date" class="form-control" id="date">
+                        </div>
+                        <div class="form-group">
+                            <label for="domicil">lieu de residence du père</label>
+                            <input type="text" class="form-control" id="lieu">
+                        </div>
+                        <div class="form-group">
+                            <label for="profession">prefession du père</label>
+                            <input type="text" class="form-control" id="profession">
+                        </div>
+                    </form>
+                </fieldset>
+            </div>
+
+            <div class="col-md-3">
+                <fieldset>
+                    <legend>
+                        <h3>information sur la mere</h3>
+                    </legend>
+                    <form action="" method="post" class="form" id="form3">
+
+                        <div class="form-group">
+                            <label for="mere">nom de la mère</label>
+                            <input type="text" class="form-control" id="nom">
+                        </div>
+                        <div class="form-group">
+                            <label for="lieu">lieu naissance de la mère</label>
+                            <input type="text" class="form-control" id="lieu">
+                        </div>
+                        <div class="form-group">
+                            <label for="année">date de naissance de la mère</label>
+                            <input type="date" class="form-control" id="date">
+                        </div>
+                        <div class="form-group">
+                            <label for="domicil">lieu de residence de la mère</label>
+                            <input type="text" class="form-control" id="lieu">
+                        </div>
+                        <div class="form-group">
+                            <label for="profession">prefession de la mère</label>
+                            <input type="text" class="form-control" id="profession">
+                        </div>
+                    </form>
+                </fieldset>
+            </div>
+
+            <div class="col-md-3">
+                <fieldset>
+                    <legend>
+                        <h3>personel</h3>
+                    </legend>
+                    <form action="" method="post" class="form" id="form3">
+
+                        <div class="form-group">
+                            <label for="dresse">acte dresseé</label>
+                            <input type="date" class="form-control" id="region">
+                        </div>
+                        <div class="form-group">
+                            <label for="declaration">nom medecin declarant</label>
+                            <input type="email" class="form-control" id="depart">
+                        </div>
+                        <div class="form-group">
+                            <label for="acte mariage">numero acte mariage</label>
+                            <input type="date" class="form-control" id="arron">
+                        </div>
+                        <div class="form-group">
+                            <label for="etat civil">nom du centre d'etat civil</label>
+                            <input type="text" class="form-control" id="profession">
+                        </div>
+                        <div class="form-group">
+                            <label for="assisté">nom de l'assistant d'etat civil</label>
+                            <input type="text" class="form-control" id="profession">
+                        </div>
+                    </form>
+                </fieldset>
+            </div>
+
+            <!-- </fieldset> -->
+
+            <button id="b">Enregistrer</button>
+            <button class="b"><a href="acceuil.html">Annuler</a></button>
+            <button class="b"><a href="naissance.html">Retour</a></button>
+
+        </div>
+
+    </div>
+    <!-- <button class="btn btn-success">suivant</button> -->
+</body>
+
+</html8
