@@ -1,7 +1,6 @@
 package com.applicationweb.mairie.model;
 
-import java.util.ArrayList;
-import java.util.List;
+
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -9,7 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
 
@@ -24,8 +23,11 @@ public class Commune {
 	@OneToOne(cascade = CascadeType.ALL) 
 	private Address address;
 	
-	@OneToMany @JoinColumn(name ="id_Commune") 
-	private List<User> users = new ArrayList<>();
+	@ManyToOne  @JoinColumn(name = "id_Department ", nullable=false)
+	private Department department ;
+	
+//	@OneToMany @JoinColumn(name ="id_Commune") 
+//	private List<User> users = new ArrayList<>();
 
 	public Long getId_commune() {
 		return id_commune;
@@ -43,12 +45,12 @@ public class Commune {
 		this.nomCommune = nomCommune;
 	}
 
-	public List<User> getUsers() {
-		return users;
+	public Department getDepartment() {
+		return department;
 	}
 
-	public void setUsers(List<User> users) {
-		this.users = users;
+	public void setDepartment(Department department) {
+		this.department = department;
 	}
 
 	public Address getAddress() {
@@ -59,12 +61,16 @@ public class Commune {
 		this.address = address;
 	}
 
-	public Commune(String nomCommune, Address address, List<User> users) {
+	public Commune(String nomCommune, Address address, Department department) {
 		super();
 		this.nomCommune = nomCommune;
 		this.address = address;
-		this.users = users;
+		this.department = department;
 	}
+
+	
+
+	
 
 	
 	

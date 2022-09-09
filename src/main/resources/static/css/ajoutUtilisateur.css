@@ -1,0 +1,116 @@
+*{
+    margin: 0 ;
+    padding: 0;
+    user-select: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 5px solid  rgb(117, 126, 129);
+}
+
+.form-conatiner{
+    display: flex;
+    width: 100%;
+    padding:0 20px;
+}
+
+.form-row{
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+}
+.input-container{
+    width: 100%;
+    margin: 10px 0;
+}
+.input-container >label{
+ font-weight: 600;
+}
+.input-container >div{
+    display: flex;
+    width: 100%;
+}
+.input-container >div >i{
+    height: 40px;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #3D775E;
+}
+.input-container >div >input , select{
+    width: 80%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    outline: none;
+    font-size: 16px
+}
+.pop form {
+    border: 2px solid #FFC813;
+    background: white;
+    width: 70%;
+    height: 85%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 1px 1px 10px 5px #FFC813;
+    overflow: auto;
+    animation: zoomout 0.5s;
+}
+
+.form-bottom{
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+    
+
+}
+
+.form-bottom >P{
+    color: #D7303A;
+    margin: 20px 0;
+}
+button{
+    height:  40px;
+    width: 120px;
+    background-color: #3D775E;
+    border: none;
+    margin:2px;
+    color: white;
+    font-size: 20px;
+}
+.form-btns{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#Anuller{
+    background: #D7303A;
+}
+
+/* liste des utilisateurs css */
+body {
+    background-color: #ffffff;
+    background-size: cover;
+}
+
+table {
+    width: 100%;
+}
+
+
+#update:hover {
+    background: #3D775E;
+}
+
+#delete:hover {
+    background: #D7303A;
+}

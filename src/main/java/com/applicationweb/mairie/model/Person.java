@@ -1,15 +1,12 @@
 package com.applicationweb.mairie.model;
 
-import java.util.ArrayList;
-import java.util.List;
+
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 @Entity
 public class Person {
@@ -17,7 +14,9 @@ public class Person {
 	@GeneratedValue (strategy = GenerationType.AUTO)
 	private Long id;
 	private String nomPers;
+	private String lieuNaissance;
 	private String dateNaissance;
+	private String lieuResidence;
 	private String profession;
 	private String nationalite;
 	
@@ -25,8 +24,8 @@ public class Person {
 	@OneToOne(cascade = CascadeType.ALL) //@JoinColumn(name= "id_Address", nullable=false)
 	private Address address;
 	
-	@OneToMany @JoinColumn(name="id_person")
-	private List<Act> acts =new ArrayList<>();
+//	@OneToMany @JoinColumn(name="id_person")
+//	private List<Act> acts =new ArrayList<>();
 	
 //	@OneToMany  @JoinColumn(name="id_person")
 //	private List<Declaration> declarations =new ArrayList<>();
@@ -49,6 +48,19 @@ public class Person {
 	public void setDateNaissance(String dateNaissance) {
 		this.dateNaissance = dateNaissance;
 	}
+	
+	public String getLieuNaissance() {
+		return lieuNaissance;
+	}
+	public void setLieuNaissance(String lieuNaissance) {
+		this.lieuNaissance = lieuNaissance;
+	}
+	public String getLieuResidence() {
+		return lieuResidence;
+	}
+	public void setLieuResidence(String lieuResidence) {
+		this.lieuResidence = lieuResidence;
+	}
 	public String getProfession() {
 		return profession;
 	}
@@ -68,35 +80,27 @@ public class Person {
 		this.address = address;
 	}
 	
-	public List<Act> getActs() {
-		return acts;
-	}
-	public void setActs(List<Act> acts) {
-		this.acts = acts;
-	}
 //	public List<Declaration> getDeclarations() {
 //		return declarations;
 //	}
 //	public void setDeclarations(List<Declaration> declarations) {
 //		this.declarations = declarations;
 //	}
-	
-	public Person(String nomPers, String dateNaissance, String profession, String nationalite, Address address,
-			List<Act> acts) {
+	public Person(String nomPers, String lieuNaissance, String dateNaissance, String lieuResidence, String profession,
+			String nationalite, Address address) {
 		super();
 		this.nomPers = nomPers;
+		this.lieuNaissance = lieuNaissance;
 		this.dateNaissance = dateNaissance;
+		this.lieuResidence = lieuResidence;
 		this.profession = profession;
 		this.nationalite = nationalite;
 		this.address = address;
-		this.acts = acts;
 	}
 	
-	
-	
-	
-	
-	
-	
+	public Person() {
+		super();
 	}
+	
+}
 	

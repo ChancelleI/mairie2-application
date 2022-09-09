@@ -4,9 +4,6 @@ package com.applicationweb.mairie.model;
 import javax.persistence.CascadeType;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -17,9 +14,7 @@ import com.applicationweb.mairie.TypeActe;
 @Table(name="DEATH")
 @DiscriminatorValue("DEATH")
 public class Death  extends Act{
-	@Id
-	@GeneratedValue (strategy = GenerationType.AUTO)
-	private Long id;
+	
 	
 	private String nomDecede;
 	private String lieuDeces;
@@ -34,12 +29,7 @@ public class Death  extends Act{
 	
 	private String nomDeclarant;
 	private String dateFabriqueActe;
-	public Long getId() {
-		return id;
-	}
-	public void setId_Death(Long id) {
-		this.id = id;
-	}
+	
 	public String getNomDecede() {
 		return nomDecede;
 	}

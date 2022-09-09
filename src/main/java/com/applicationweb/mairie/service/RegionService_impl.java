@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import com.applicationweb.mairie.model.Region;
 import com.applicationweb.mairie.repository.Regionrepository;
 
@@ -15,7 +16,6 @@ import com.applicationweb.mairie.repository.Regionrepository;
 public class RegionService_impl implements RegionService {
 	@Autowired
 	private Regionrepository regionRepository;
-	
 	
 	@Override
 	public Region saveregion(Region region) {
@@ -47,6 +47,7 @@ public class RegionService_impl implements RegionService {
 		// TODO Auto-generated method stub
 		return region1;
 	}
+	
 	
 	
 	}

@@ -31,7 +31,7 @@ public class Act {
 	@Column(name = "type_acte")
 	protected TypeActe typeActe;
 	
-	@ManyToOne @JoinColumn(name ="id_Commune" , nullable=false)
+	@ManyToOne @JoinColumn(name ="id_commune" , nullable=false)
 	protected Commune commune;
 	
 	//@ManyToOne  @JoinColumn(name = "id_Person ", nullable=false)

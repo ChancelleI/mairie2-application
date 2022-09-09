@@ -1,14 +1,14 @@
 package com.applicationweb.mairie.model;
 
-import java.util.ArrayList;
-import java.util.List;
+
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToOne;
+
 
 @Entity
 public class Department {
@@ -17,8 +17,11 @@ public class Department {
 	private Long id;
 	private String nomDepartement;
 	
-	@OneToMany @JoinColumn(name="id_Department")
-	private List<Commune> communes =new ArrayList<>();
+	@ManyToOne  @JoinColumn(name = "id_Region ", nullable=false)
+	private Region region ;
+	
+//	@OneToMany @JoinColumn(name="id_Department")
+//	private List<Commune> communes =new ArrayList<>();
 	
 	public Long getId() {
 		return id;
@@ -33,17 +36,16 @@ public class Department {
 		this.nomDepartement = nomDepartement;
 	}
 	
-	public List<Commune> getCommunes() {
-		return communes;
+	public Region getRegion() {
+		return region;
 	}
-	public void setCommunes(List<Commune> communes) {
-		this.communes = communes;
+	public void setRegion(Region region) {
+		this.region = region;
 	}
-	
-	public Department(String nomDepartement, List<Commune> communes) {
+	public Department(String nomDepartement, Region region) {
 		super();
 		this.nomDepartement = nomDepartement;
-		this.communes = communes;
+		this.region = region;
 	}
 	
 	

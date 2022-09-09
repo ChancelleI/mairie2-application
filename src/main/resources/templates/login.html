@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th"http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/login.css}">
+    <title>Authentification</title>
+</head>
+<body>
+    <div class="container">
+        <div class="left-div">
+        <img th:src="@{/images/logo e-acte.png}" alt="logo" class="logo" >
+        <img th:src="@{/images/doc3.jpeg}" alt="" class="image">
+        </div>
+        <div class="right-div">
+            <p>Connectez-vous à votre Mairie pour commencer.</p>
+            <div th:if="${param.error}" style="color: red;" >
+            username ou mot de passe invalide
+            </div>
+            <form th:action="@{/login}" method="post">
+                <label for="">Username</label>
+                <br>
+                <input type="text" name="username" class="field" required>
+                <br>
+                <label for="">Mot de passe</label>
+                <br>
+                <input type="password" name="password"  class="field" required><br>
+                <!-- <button type="submit" class="btnLogin">Connexion</button> -->
+                <button type="submit" class="btnLogin"><a th:href="@{/sidebar}" class="a" style="text-decoration:none; color: #060D0A;">connexion</a></button>
+            </form>
+
+        </div>
+    </div>
+</body>
+</html>

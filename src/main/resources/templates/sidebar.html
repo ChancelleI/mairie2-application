@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Administrateur</title>
+    <link rel="stylesheet" th:href="@{/css/utilisateur1.css}">
+    <!-- <link rel="stylesheet" href="style/ajoutUtilisateur.css"> -->
+    <link th:href="@{https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css}" rel="stylesheet"
+        type="text/css">
+    <script th:src="@{https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js}"></script>
+    <!-- <link rel="stylesheet" href="bootstrap/JQuery.js"> -->
+    <!--<script th:src="@{js/bootstrap.js}"></script>
+    <link rel="stylesheet" th:href="@{css/bootstrap.css}">-->
+    <link rel="stylesheet" th:href="@{https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css}">
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
+    <script th:src="@{https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js}"></script>
+</head>
+
+<body>
+
+    <!--wrapper start-->
+    <div class="wrapper">
+        <!--header start-->
+        <div class="header">
+            <div class="header-menu">
+                <div class="title">Super<span>Admin</span></div>
+                <!-- <div class="sidebar-btn">
+            <i class="fas fa-bars"></i>
+        </div> -->
+                <ul>
+                    <li><a class="menu-icon" href=""><i class="fas fa-search"></i></a></li>
+                    <li><a class="menu-icon" href=""><i class="fas fa-bell"></i></a></li>
+                    <li><a class="menu-icon" href=""><i class="fas fa-power-off"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        <!--header menu end-->
+        <!--sidebar start-->
+        <div class="sidebar">
+            <div class="sidebar-menu">
+                <center class="profile">
+                    <img th:src="@{/images/default-admin.png}" alt="">
+                    <p>Administrateur</p>
+                </center>
+                <li class="item">
+                    <a href="#dash" class="menu-btn" data-toggle="tab">
+                        <i class="fas fa-desktop"></i><span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="item" id="profile">
+                    <a href="#profile" class="menu-btn">
+                        <i class="fas fa-user-circle"></i><span>Profile <i
+                                class="fas fa-chevron-down drop-down"></i></span>
+                    </a>
+                    <div class="sub-menu">
+                        <a href="#"><i class="fas fa-image"></i><span>Picture</span></a>
+                        <a href="#"><i class="fas fa-address-card"></i><span>Info</span></a>
+                    </div>
+                </li>
+                <li class="item" id="acte">
+                    <a href="#profile" class="menu-btn">
+                        <i class="fas fa-envelope"></i><span>Gestion des Actes<i
+                                class="fas fa-chevron-down drop-down"></i></span>
+                    </a>
+                    <div class="sub-menu">
+                        <ul>
+                            <li><a th:href="@{/naisance}"><i class="fas font-family"></i><span>naissance</span></a> </li>
+                            <li><a href="mariage.html"><i class="fas font-family"></i><span>mariage</span></a></li>
+                            <li><a href="deces.html"><i class="fas font-family"></i><span>deces</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="item" id="marie">
+                    <a href="#profile" class="menu-btn">
+                        <i class="fas fa-image"></i><span>Gestion des mairie<i
+                                class="fas fa-chevron-down drop-down"></i></span>
+                    </a>
+                    <div class="sub-menu">
+                        <a href="mairie.html"><i class="fas fa-lock"></i><span>Ajouter une mairie</span></a>
+                        <a href="#"><i class="fas fa-lock"></i><span>consulter</span></a>
+                    </div>
+                </li>
+                <li class="item" id="user">
+                    <a href="#profile" class="menu-btn">
+                        <i class="fas fa-user-circle"></i><span>Gestion des Admin<i
+                                class="fas fa-chevron-down drop-down"></i></span>
+                    </a>
+                    <div class="sub-menu">
+                        <a href="admin.html"><i class="fas fa-lock"><span>Ajouter un Administrateur</span></i></a>
+                        <a href="#"><i class="fas fa-lock"><span>consulter</span></i></a>
+                    </div>
+                </li>
+            </div>
+        </div>
+        <!--sidebar end-->
+        <!--main container start-->
+        <!--sidebar end-->
+        <!--main container start-->
+        <div class="main-container tab-content">
+
+            <div id="dash" class="tab-pane fade in active">
+                <div class="card">
+                    <h1 style="text-align:center; font-size: 60px;">Bienvenue A l'Etat-civil du cameroun E-Acte</h1>
+                </div>
+                <div class="card">
+                    <img th:src="@{/images/etat civile.png}" alt="" style="width: 70%; height:50%;">
+                </div>
+                <div class="card">
+                    <p style="text-align: center; font-size: 30px;"> l'Etat-civil E-Acte vous aide a concerver vos actes
+                        en toute securité</p>
+                </div>
+            </div>
+
+            <!-- <div id="naissance" class="tab-pane fade">
+                <form action="" method="post" class="form">
+                    <li><button><a data-toggle="tab" href="#enfant" class="a"><i
+                                    class="fas font-family"></i><span>Nouvel Enregistrement</span></a></button></li>
+                    <li><button><a href="consulte_naissance.html" class="a">consulter un Enregistrement</a></button>
+                    </li>
+                    <li><button><a href="editer_naissance.html" class="a">Editer/supprimer</a></button></li>
+                    <li><button><a href="outil_nais.html" class="a">outil</a></button></li>
+                    <li><button><a href="acceuil.html" class="a">Retour à l'acceuil</a></button></li>
+                </form>
+            </div> -->
+            <!-- <div id="mariage" class="tab-pane fade" style="width:10rem; height:40rem;background-color:rgb(99, 17, 21);">
+                mariage
+            </div>
+            <div id="deces" class="tab-pane fade" style="width:10rem; height:40rem;background-color:rgb(98, 99, 17);">
+                deces
+            </div> -->
+
+            <!-- <div id="mariage" class="tab-pane fade">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-6 ac">
+                            <img width="100%" height="auto" src="assets/images/naissance.jpg" alt="">
+                            <h5>enregistrer un nouvel enfant</h5>
+                            <i>2022-10-05</i>
+                            <p>vous devez disposer de toute les informations neccessaire pour commencer le remplissage
+                                du formulaire</p>
+                            <a href="#">Enregistrement</a>
+                        </div>
+                        <div class="col-md-3 ac">
+                            <img width="100%" height="auto" src="assets/images/doc2.jpg" alt="">
+                            <h5>consulter la liste des enregistrements</h5>
+                            <i>2022-10-05</i>
+                            <p>vous pouvez rechercher modifierou supprimer une naissance enregistrer </p>
+                            <a href="#">consulter</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div> -->
+
+            <!-- <div id="deces" class="tab-pane fade">
+                <form action="" method="post" class="form">
+                    <li><button><a href="defunt.html" class="a">Nouvel Enregistrement</a></button></li>
+                    <li><button><a href="consulte_naissance.html" class="a">consulter un Enregistrement</a></button>
+                    </li>
+                    <li><button><a href="editer_naissance.html" class="a">Editer/supprimer</a></button></li>
+                    <li><button><a href="outil_nais.html" class="a">outil</a></button></li>
+                    <li><button><a href="acceuil.html" class="a">Retour à l'acceuil</a></button></li>
+                </form>
+            </div> -->
+
+            <!-- <div id="enfant" class="tab-pane fade">
+                <h1>gvhuhjknjh</h1>
+            </div> -->
+        </div>
+        <!--main container end-->
+    </div>
+    <!--wrapper end-->
+
+
+
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".sidebar-btn").click(function () {
+                $(".wrapper").toggleClass("collapse");
+            });
+        });
+
+    </script>
+
+
+</body>
+
+</html>

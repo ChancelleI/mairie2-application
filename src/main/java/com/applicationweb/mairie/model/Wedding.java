@@ -11,9 +11,6 @@ import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
@@ -30,9 +27,7 @@ import com.applicationweb.mairie.TypeActe;
 @Table(name="WEDDING")
 @DiscriminatorValue("WEDDING")
 public class Wedding extends Act{
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
+	
 	
 	@OneToOne(cascade = CascadeType.ALL)
 	private Person epoux;
@@ -67,16 +62,6 @@ public class Wedding extends Act{
 	
 	@Enumerated(EnumType.STRING)
 	private SystemeMatrimonial systemeMatrimonial;
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-
 	public String getNomPereEpoux() {
 		return nomPereEpoux;
 	}

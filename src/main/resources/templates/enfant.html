@@ -1,217 +1,313 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="bootstrap/bootstrap.css">
-    <!-- <link rel="stylesheet" href="bootstrap/style.css"> -->
-    <title>acte naissance</title>
-</head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Formulaire</title>
 
+    <!-- <link rel="stylesheet" href="css/styles.css"> -->
+</head>
 <style>
     body {
-        background-color: #C0C001;
+        background: url("img/baby.jpg")no-repeat;
+        background-size: cover;
+        color: #060D0A;
+        /* justify-content: center; */
     }
     
-    fieldset {
+    main {
+        background-color: rgb(0 0 0 /35%);
+        width: 90%;
+        height: 100%;
+        border: 5px solid lightgrey;
+        padding: 20px;
         border-radius: 5px;
-        border: 1px solid #a6a6a6;
-        padding: 5px;
-        margin-top: 100px;
-        height: 90%;
-        width: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
     }
     
-    button {
-        background-color: #0F823C;
-        margin-top: 70px;
-        border-radius: 25px;
-        padding: 10px;
-        margin-right: 200px;
-        width: 200px;
-        cursor: pointer;
-        transition: .7s;
-        outline: none;
-        border: 5px solid #CF0921;
+    input {
         color: beige;
-        font-size: 25px;
-        font-weight: bolder;
+        background-color: rgb(0 0 0/15%);
         display: block;
-    }
-    
-    button:hover {
-        background-color: #C0C001;
-    }
-    
-    button a {
-        color: beige;
-    }
-    
-    button a:hover {
-        text-decoration: none;
-        color: beige;
+        width: 95%;
+        padding: 10px;
+        margin-top: 5px;
+        margin-bottom: 15px;
+        border: 1px solid lightgrey;
+        border-radius: 5px;
     }
     
     #sexe {
-        padding: 8px;
-        width: 295px;
+        color: beige;
+        background-color: rgb(0 0 0/30%);
+        padding: 10px;
+        width: 97%;
         border-radius: 5px;
         border: 1px;
         transition: .7s;
     }
     
-    #sexe:hover {
-        border-color: #D5DCFC;
+    .page {
+        display: none;
+    }
+    
+    header {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .page-num {
+        border: 1px solid #ffff;
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+        text-align: center;
+        padding: 10px;
+    }
+    
+    .active {
+        color: white;
+        background-color: blue;
+    }
+    
+    button {
+        background-color: #0F823C;
+        margin-top: 40px;
+        margin-left: 70px;
+        margin-right: 100px;
+        padding: 10px;
+        width: 200px;
+        cursor: pointer;
+        outline: none;
+        border: 2px solid #CF0921;
+        font-weight: bolder;
+        font-size: 20px;
+        color: beige;
+        transition: .7s;
+        border-radius: 15px;
+    }
+    
+    button:hover {
+        background-color: #C0C001;
     }
 </style>
 
 <body>
-    <div class="container-fluid" id="naiss">
-        <h1 class="text-center">enregistrer une naissance</h1>
-        <div class="row">
-            <!-- <fieldset> -->
-            <div class="col-md-3">
-                <fieldset>
-                    <legend>
-                        <h3>informations sur l'enfant</h3>
-                    </legend>
-                    <form action="" method="post" class="form" id="form1">
+    <main>
+        <header>
+            <h1>ENREGISTRER UNE NAISSANCE </h1>
+        </header>
 
-                        <div class="form-group">
-                            <label for="numero enfant">numero</label>
-                            <input type="number" class="form-control" id="num">
-                        </div>
-                        <div class="form-group">
-                            <label for="nom">nom de l'enfant</label>
-                            <input type="text" class="form-control" id="nom">
-                        </div>
-                        <div class="form-group">
-                            <label for="date naissance">date naissance</label>
-                            <input type="date" class="form-control" id="date">
-                        </div>
-                        <div class="form-group">
-                            <label for="lieu naissance">lieu naissance</label>
-                            <input type="text" class="form-control" id="lieu">
-                        </div>
-                        <div class="mb-4 pb-2">
-                            <label for="sexe">sexe de l'enfant</label>
-                            <!-- <input type="select" class="form-control" id="sexe"> -->
-                            <select class="select" id="sexe">
-                            <option value="feminin">feminin</option> 
-                            <option value="masculin">masculin</option> 
-                            </select>
-
-
-                        </div>
-                    </form>
-                </fieldset>
+        <form action="#" method="post" class="form" id="form1" th:action="@{/saveBirth}" th:object="${birth}">
+            <div class="page" id="page1">
+                <h1>Identité de l'enfant</h1>
+              
+                <div>
+                    <label for="nom">nom de l'enfant</label>
+                    <input th:field="*{nom_enfant}" type="text" id="nom">
+                </div>
+                <div>
+                    <label for="date naissance">date naissance</label>
+                    <input th:field="*{dateNaissEnfant}" type="date" id="date">
+                </div>
+                <div>
+                    <label for="lieu naissance">lieu naissance</label>
+                    <input th:field="*{lieuNaissEnfant}" type="text" id="lieu">
+                </div>
+                <div>
+                    <label for="sexe">sexe de l'enfant</label>
+                    <!-- <input type="select" class="form-control" id="sexe"> -->
+                    <select th:field="*{sexeEnfant}" class="select" id="sexe">
+                    <option value="feminin">feminin</option> 
+                    <option value="masculin">masculin</option> 
+                    </select>
+                </div>
+                <button  class="next" type="button">Suivant</button>
             </div>
 
-            <div class="col-md-3">
-                <fieldset>
-                    <legend>
-                        <h3>information sur le père</h3>
-                    </legend>
-                    <form action="" method="post" class="form" id="form2">
-
-                        <div class="form-group">
-                            <label for="nom pere">nom du pere</label>
-                            <input type="text" class="form-control" id="pere">
-                        </div>
-                        <div class="form-group">
-                            <label for="naissance pere">lieu de naissance du pere</label>
-                            <input type="text" class="form-control" id="pere">
-                        </div>
-                        <div class="form-group">
-                            <label for="domicil">date naissance du pere</label>
-                            <input type="date" class="form-control" id="date">
-                        </div>
-                        <div class="form-group">
-                            <label for="domicil">lieu de residence du père</label>
-                            <input type="text" class="form-control" id="lieu">
-                        </div>
-                        <div class="form-group">
-                            <label for="profession">prefession du père</label>
-                            <input type="text" class="form-control" id="profession">
-                        </div>
-                    </form>
-                </fieldset>
+            <div class="page" id="page2">
+                <h1>Identité du père</h1>
+               
+               <!--<li th:each="item, stat : *{person}" class="itemRow">-->
+                <div>
+                    <label th:for="nomPere">nom du pere</label>
+                    <input type="text" id="nomPere" name="nomPere" th:field="*{pere.nomPers}"/>
+                </div>
+                <div>
+                    <label th:for="lieuNaissance">lieu de naissance du pere</label>
+                    <input  type="text" id="pere" name="lieuNaissance" th:field="*{pere.lieuNaissance}"/>
+                </div>
+                <div>
+                    <label th:for="dateNaissance">date naissance du pere</label>
+                    <input  type="date" id="date" name="dateNaissance" th:field="*{pere.dateNaissance}"/>
+                </div>
+                <div>
+                    <label th:for="lieuResidence">lieu de residence du père</label>
+                    <input  type="text" id="lieu" name="lieuResidence" th:field="*{pere.lieuResidence}"/>
+                   
+                </div>
+                <div>
+                    <label th:for="profession">prefession du père</label>
+                    <input  type="text" id="profession" name="profession" th:field="*{pere.profession}"/>
+                    
+                </div>
+                <button  class="prev" type="button">Précédent</button >
+                <button  class="next" type="button">Suivant</button>
             </div>
 
-            <div class="col-md-3">
-                <fieldset>
-                    <legend>
-                        <h3>information sur la mere</h3>
-                    </legend>
-                    <form action="" method="post" class="form" id="form3">
 
-                        <div class="form-group">
-                            <label for="mere">nom de la mère</label>
-                            <input type="text" class="form-control" id="nom">
-                        </div>
-                        <div class="form-group">
-                            <label for="lieu">lieu naissance de la mère</label>
-                            <input type="text" class="form-control" id="lieu">
-                        </div>
-                        <div class="form-group">
-                            <label for="année">date de naissance de la mère</label>
-                            <input type="date" class="form-control" id="date">
-                        </div>
-                        <div class="form-group">
-                            <label for="domicil">lieu de residence de la mère</label>
-                            <input type="text" class="form-control" id="lieu">
-                        </div>
-                        <div class="form-group">
-                            <label for="profession">prefession de la mère</label>
-                            <input type="text" class="form-control" id="profession">
-                        </div>
-                    </form>
-                </fieldset>
+            <div class="page" id="page3">
+                <h1>Identité de la mère</h1>
+              
+                <div>
+                    <label th:for="nomPers">nom de la mère</label>
+                    <input  type="text" id="nom" name="nomPers" th:field="*{mere.nomPers}"/>
+                 
+                </div>
+                <div>
+                    <label th:for="lieuNaissance">lieu naissance de la mère</label>
+                    <input type="text" id="lieu" name="lieuResidence" th:field="*{mere.lieuResidence}"/>
+                   
+                </div>
+                <div>
+                    <label th:for="dateNaissance">date de naissance de la mère</label>
+                    <input type="date" id="date" name="dateNaissance" th:field="*{mere.dateNaissance}"/>
+                    
+                </div>
+                <div>
+                    <label th:for="lieuResidence">lieu de residence de la mère</label>
+                    <input type="text" id="lieu" name="lieuResidence" th:field="*{mere.lieuResidence}"/>
+                   
+                </div>
+                <div>
+                    <label th:for="profession">profession de la mère</label>
+                    <input type="text" id="profession" name="profession" th:field="*{mere.profession}"/>
+                </div>
+               
+                <button class="prev" type="button">Précédent</button>
+                <button class="next" type="button">Suivant</button>
             </div>
 
-            <div class="col-md-3">
-                <fieldset>
-                    <legend>
-                        <h3>personel</h3>
-                    </legend>
-                    <form action="" method="post" class="form" id="form3">
-
-                        <div class="form-group">
-                            <label for="dresse">acte dresseé</label>
-                            <input type="date" class="form-control" id="region">
-                        </div>
-                        <div class="form-group">
-                            <label for="declaration">nom medecin declarant</label>
-                            <input type="email" class="form-control" id="depart">
-                        </div>
-                        <div class="form-group">
-                            <label for="acte mariage">numero acte mariage</label>
-                            <input type="date" class="form-control" id="arron">
-                        </div>
-                        <div class="form-group">
-                            <label for="etat civil">nom du centre d'etat civil</label>
-                            <input type="text" class="form-control" id="profession">
-                        </div>
-                        <div class="form-group">
-                            <label for="assisté">nom de l'assistant d'etat civil</label>
-                            <input type="text" class="form-control" id="profession">
-                        </div>
-                    </form>
-                </fieldset>
+            <div class="page" id="page4">
+                <h1>information generale </h1>
+               
+                <div>
+                    <label for="dresse">acte dressé</label>
+                    <input th:field="*{dateFabriqueACte}" type="date" id="region"/>
+                </div>
+                <div>
+                    <label for="declaration">nom medecin declarant</label>
+                    <input th:field="*{nomDeclarant}" type="text" id="medecin"/>
+                </div>
+                <div>
+                    <label for="acte mariage">numero acte mariage</label>
+                    <input type="date" id="num" th:field="*{declaration}"/>
+                </div>
+                <div>
+                    <label for="etat civil">nom du centre d'etat civil</label>
+                    <input type="text" id="centre">
+                </div>
+                <div>
+                    <label for="assisté">nom de l'assistant d'etat civil</label>
+                    <input type="text" id="Assistant">
+                </div>
+               
+                <button   class="prev" type="button">Précédent</button>
+                <button  >Terminer</button>
             </div>
+        </form>
+    </main>
 
-            <!-- </fieldset> -->
+    <!-- <script src="scripts.js"></script> -->
+    <script>
+        // On va chercher les différents éléments de notre page
+        const pages = document.querySelectorAll(".page")
+        const header = document.querySelector("header")
+        const nbPages = pages.length // Nombre de pages du formulaire
+        let pageActive = 1
 
-            <button id="b">Enregistrer</button>
-            <button class="b"><a href="acceuil.html">Annuler</a></button>
-            <button class="b"><a href="naissance.html">Retour</a></button>
+        // On attend le chargement de la page
+        window.onload = () => {
+            // On affiche la 1ère page du formulaire
+            document.querySelector(".page").style.display = "initial"
 
-        </div>
+            // On affiche les numéros des pages dans l'entête
+            // On parcourt la liste des pages
+            pages.forEach((page, index) => {
+                // On crée l'élément "numéro de page"
+                let element = document.createElement("div")
+                element.classList.add("page-num")
+                element.id = "num" + (index + 1)
+                if (pageActive === index + 1) {
+                    element.classList.add("active")
+                }
+                element.innerHTML = index + 1
+                header.appendChild(element)
+            })
 
-    </div>
-    <!-- <button class="btn btn-success">suivant</button> -->
+            // On gère les boutons "suivant"
+            let boutons = document.querySelectorAll(".next")
+
+            for (let bouton of boutons) {
+                bouton.addEventListener("click", pageSuivante)
+            }
+
+            // On gère les boutons "precedent"
+            boutons = document.querySelectorAll(".prev")
+
+            for (let bouton of boutons) {
+                bouton.addEventListener("click", pagePrecedente)
+            }
+        }
+
+        /**
+         * Cette fonction fait avancer le formulaire d'une page
+         */
+        function pageSuivante() {
+            // On masque toutes les pages
+            for (let page of pages) {
+                page.style.display = "none"
+            }
+
+            // On affiche la page suivante
+            this.parentElement.nextElementSibling.style.display = "initial"
+
+            // On "désactive" la page active
+            document.querySelector(".active").classList.remove("active")
+
+            // On incrémente pageActive
+            pageActive++
+
+            // On "active" le nouveau numéro
+            document.querySelector("#num" + pageActive).classList.add("active")
+        }
+
+        /**
+         * Cette fonction fait reculer le formulaire d'une page
+         */
+        function pagePrecedente() {
+            // On masque toutes les pages
+            for (let page of pages) {
+                page.style.display = "none"
+            }
+
+            // On affiche la page suivante
+            this.parentElement.previousElementSibling.style.display = "initial"
+
+            // On "désactive" la page active
+            document.querySelector(".active").classList.remove("active")
+
+            // On incrémente pageActive
+            pageActive--
+
+            // On "active" le nouveau numéro
+            document.querySelector("#num" + pageActive).classList.add("active")
+        }
+    </script>
 </body>
 
-</html8
+</html>

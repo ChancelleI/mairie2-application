@@ -3,12 +3,11 @@ package com.applicationweb.mairie.model;
 
 
 
+
+
 import javax.persistence.CascadeType;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -21,14 +20,18 @@ import com.applicationweb.mairie.TypeActe;
 @Table(name="BIRTH")
 @DiscriminatorValue("BIRTH")
 public class Birth extends Act {
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
 	
 	private String nom_enfant;
 	private String dateNaissEnfant;
 	private String lieuNaissEnfant;
 	private String sexeEnfant;
+	private String numActeMariage;
+	private String nomAssistant;
+	private String centreEtat;
+	
+	
+	
+	
 	
 	//@OneToOne @JoinColumn(name="id_Birth")
 	//private List<Person>persons = new ArrayList<>();
@@ -45,12 +48,6 @@ public class Birth extends Act {
 	@OneToOne(cascade = CascadeType.ALL)
 	private Declaration declaration;
 	
-	public Long getId_Birth() {
-		return id;
-	}
-	public void setId_Birth(Long id) {
-		this.id = id;
-	}
 	public String getNom_enfant() {
 		return nom_enfant;
 	}
@@ -74,6 +71,26 @@ public class Birth extends Act {
 	}
 	public void setSexeEnfant(String sexeEnfant) {
 		this.sexeEnfant = sexeEnfant;
+	}
+	
+	
+	public String getNumActeMariage() {
+		return numActeMariage;
+	}
+	public void setNumActeMariage(String numActeMariage) {
+		this.numActeMariage = numActeMariage;
+	}
+	public String getNomAssistant() {
+		return nomAssistant;
+	}
+	public void setNomAssistant(String nomAssistant) {
+		this.nomAssistant = nomAssistant;
+	}
+	public String getCentreEtat() {
+		return centreEtat;
+	}
+	public void setCentreEtat(String centreEtat) {
+		this.centreEtat = centreEtat;
 	}
 	public Person getMere() {
 		return mere;
@@ -107,20 +124,29 @@ public class Birth extends Act {
 	public void setDeclaration(Declaration declaration) {
 		this.declaration = declaration;
 	}
+	public Birth(Commune commune) {
+		super(TypeActe.BIRTH, commune);
+		
+	}
 	public Birth(TypeActe typeActe, Commune commune, String nom_enfant, String dateNaissEnfant, String lieuNaissEnfant,
-			String sexeEnfant, Person mere, Person pere, String nomDeclarant, String dateFabriqueACte,
-			Declaration declaration) {
+			String sexeEnfant, String numActeMariage, String nomAssistant, String centreEtat, Person mere, Person pere,
+			String nomDeclarant, String dateFabriqueACte, Declaration declaration) {
 		super(typeActe, commune);
 		this.nom_enfant = nom_enfant;
 		this.dateNaissEnfant = dateNaissEnfant;
 		this.lieuNaissEnfant = lieuNaissEnfant;
 		this.sexeEnfant = sexeEnfant;
+		this.numActeMariage = numActeMariage;
+		this.nomAssistant = nomAssistant;
+		this.centreEtat = centreEtat;
 		this.mere = mere;
 		this.pere = pere;
 		this.nomDeclarant = nomDeclarant;
 		this.dateFabriqueACte = dateFabriqueACte;
 		this.declaration = declaration;
 	}
+	
+	
 	
 	
 	

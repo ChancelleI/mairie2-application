@@ -49,6 +49,9 @@ public class Address {
 		this.quartier = quartier;
 	}
 	
+	public Address() {
+		
+	}
 	public Address(String ville, String contact, String email, String quartier) {
 		super();
 		this.ville = ville;

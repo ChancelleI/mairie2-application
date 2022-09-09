@@ -1,0 +1,278 @@
+<!DOCrequired TYPE html>
+    <html lang="pt-br">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Dashboard Administrateur</title>
+        <link rel="stylesheet" href="style/utilisateur1.css">
+        <link rel="stylesheet" href="style/style.css">
+        <link rel="stylesheet" href="style/ajoutUtilisateur.css">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet"
+            required type="text/css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    </head>
+
+    <body>
+
+        <!--wrapper start-->
+        <div class="wrapper">
+            <!--header start-->
+            <div class="header">
+                <div class="header-menu">
+                    <div class="title">Super<span>Admin</span></div>
+                    <!-- <div class="sidebar-btn">
+                    <i class="fas fa-bars"></i>
+                </div> -->
+                    <ul>
+                        <li><a class="menu-icon" href=""><i class="fas fa-search"></i></a></li>
+                        <li><a class="menu-icon" href=""><i class="fas fa-bell"></i></a></li>
+                        <li><a class="menu-icon" href=""><i class="fas fa-power-off"></i></a></li>                    </ul>
+                </div>
+            </div>
+            <!--header menu end-->
+            <!--sidebar start-->
+            <div class="sidebar">
+                <div class="sidebar-menu">
+                    <center class="profile">
+                        <img src="./assets/images/default-admin.png" alt="">
+                        <p>Administrateur</p>
+                    </center>
+                    <li class="item">
+                        <a href="#dash" class="menu-btn" data-toggle="tab">
+                            <i class="fas fa-desktop"></i><span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="item" id="profile">
+                        <a href="#profile" class="menu-btn">
+                            <i class="fas fa-user-circle"></i><span>Profile <i
+                                    class="fas fa-chevron-down drop-down"></i></span>
+                        </a>
+                        <div class="sub-menu">
+                            <a href="#"><i class="fas fa-image"></i><span>Picture</span></a>
+                            <a href="#"><i class="fas fa-address-card"></i><span>Info</span></a>
+                        </div>
+                    </li>
+                    <li class="item" id="acte">
+                        <a href="#profile" class="menu-btn">
+                            <i class="fas fa-envelope"></i><span>Gestion des Actes<i
+                                    class="fas fa-chevron-down drop-down"></i></span>
+                        </a>
+                        <div class="sub-menu">
+                            <ul>
+                                <li><a href="naisance.html"><i class="fas font-family"></i><span>naissance</span></a>
+                                </li>
+                                <li><a href="mariage.html"><i class="fas font-family"></i><span>mariage</span></a></li>
+                                <li><a href="deces.html"><i class="fas font-family"></i><span>deces</span></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="item" id="marie">
+                        <a href="#profile" class="menu-btn">
+                            <i class="fas fa-image"></i><span>Gestion des mairie<i
+                                    class="fas fa-chevron-down drop-down"></i></span>
+                        </a>
+                        <div class="sub-menu">
+                            <a href="mairie.html"><i class="fas fa-lock"></i><span>Ajouter une mairie</span></a>
+                            <a href="#"><i class="fas fa-lock"></i><span>consulter</span></a>
+                        </div>
+                    </li>
+                    <li class="item" id="user">
+                        <a href="#profile" class="menu-btn">
+                            <i class="fas fa-user-circle"></i><span>Gestion des Admin<i
+                                    class="fas fa-chevron-down drop-down"></i></span>
+                        </a>
+                        <div class="sub-menu">
+                            <a href="admin.html"><i class="fas fa-lock"><span>Ajouter un Administrateur</span></i></a>
+                            <a href="#"><i class="fas fa-lock"><span>consulter</span></i></a>
+                        </div>
+                    </li>
+                </div>
+            </div>
+            <!--sidebar end-->
+            <!--main container start-->
+            <div class="main-container tab-content" style="display: block;">
+
+                <div class="modal">
+                    <div class="pop">
+                        <form method="post">
+                            <div class="close-modal">
+                                <span>&times;</span>
+                            </div>
+                            <header>
+                                <h3>ENREGISTRER UN Utilisateur </h3>
+                            </header>
+                            <div class="form-conatiner">
+                                <div class="form-row">
+                                    <div class="input-container">
+                                        <label> Nom *</label>
+                                        <div>
+                                            <i class="fa fa-user"></i>
+                                            <input type="text" placeholder="Entrer le nom" />
+                                        </div>
+                                    </div>
+                                    <div class="input-container">
+                                        <label> Genre *</label>
+                                        <div>
+                                            <i class="fa fa-user"></i>
+                                            <input type="text" placeholder="Entrer le Genre" />
+                                        </div>
+                                    </div>
+                                    <div class="input-container">
+                                        <label> Role *</label>
+                                        <div>
+                                            <i class="fa fa-user"></i>
+                                            <input type="text" placeholder="Entrer le Role" />
+                                        </div>
+                                    </div>
+                                    <div class="input-container">
+                                        <label> Mot de passe *</label>
+                                        <div>
+                                            <i class="fa fa-user"></i>
+                                            <input type="text" placeholder="Entrer le mot de passe" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="input-container">
+                                        <label> Prenom *</label>
+                                        <div>
+                                            <i class="fa fa-user"></i>
+                                            <input type="text" placeholder="Entrer le Prenom" />
+                                        </div>
+                                    </div>
+                                    <div class="input-container">
+                                        <label> Numero de CNI ou recepicer *</label>
+                                        <div>
+                                            <i class="fa fa-user"></i>
+                                            <input type="text" placeholder="Entrer le Numero de Cni" />
+                                        </div>
+                                    </div>
+                                    <!-- <div class="input-container">
+                                          <label> Compte *</label>
+                                          <div>
+                                               <i class="fa fa-user"></i>
+                                               <input type="text" placeholder="Entrer le Numerode votre compte" />
+                                          </div>
+                                     </div> -->
+                                    <div class="input-container">
+                                        <label> Residence *</label>
+                                        <div>
+                                            <i class="fa fa-home"></i>
+                                            <input type="text" placeholder="Entrer votre Residence" />
+                                        </div>
+                                    </div>
+                                    <div class="input-container">
+                                        <label> Email </label>
+                                        <div>
+                                            <i class="fa fa-mail-bulk"></i>
+                                            <input type="email" placeholder="Entrer votre Email" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="input-container">
+                                        <label> Date de Naisance *</label>
+                                        <div>
+                                            <i class="fa fa-calendar-times"></i>
+                                            <input type="date" placeholder="Entrer votre Email" />
+                                        </div>
+                                    </div>
+
+                                    <!-- <div class="input-container">
+                                          <label> Service *</label>
+                                          <div>
+                                               <i class="fa fa-user"></i>
+                                               <input type="text" placeholder="Entrer votre Service" />
+                                          </div>
+                                     </div> -->
+                                    <div class="input-container">
+                                        <label> Login *</label>
+                                        <div>
+                                            <i class="fa fa-user"></i>
+                                            <input type="text" placeholder="Entrer votre Login" />
+                                        </div>
+                                    </div>
+                                    <div class="input-container">
+                                        <label> Telephone *</label>
+                                        <div>
+                                            <i class="fa fa-phone"></i>
+                                            <input type="text" placeholder="Entrer votre Telephone" />
+                                        </div>
+                                    </div>
+                                    <div class="input-container">
+                                        <label> Telephone d'urgence *</label>
+                                        <div>
+                                            <i class="fa fa-phone"></i>
+                                            <input type="text" placeholder="Entrer le mot de passe" />
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="submitbtn" style="margin:20px 0 ;">
+                                <button  type="button">Anuller</button>
+                                <button class="fin">Creer</button>
+                            </div>
+                        </form>
+
+                    </div>
+
+                </div>
+
+                <header>
+                    <h3>Gestion des utilisateur </h3>
+                </header>
+                <nav>
+                    <button class="js_addbtn">+ Ajouter</button>
+                    <div class="search">
+                        <i class="fa fa-search"></i>
+                        <input required type="text" placeholder="Rechercher" id="search">
+                    </div>
+                </nav>
+                <div class="flex-row" style="margin-top: 20px;">
+                    <article>
+                        <table id="tab">
+                            <thead>
+                                <tr>
+                                    <th>Nom</th>
+                                    <th class="pseudo">Prenom</th>
+                                    <th class="email">Telephone</th>
+                                    <th>Email </th>
+                                    <th colspan="2">
+                                        action
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tr>
+                                <td> Rivaldes </td>
+                                <td> Ranol </td>
+                                <td> 654780492 </td>
+                                <td> rivaldes@gmail.com </td>
+                                <td>
+                                    <button>Suprimer</button>
+                                </td>
+                                <td>
+                                    <button>Editer</button>
+                                </td>
+                            </tr>
+                        </table>
+
+                    </article>
+                </div>
+
+            </div>
+            <!--main container end-->
+        </div>
+        <!--wrapper end-->
+
+        <script required type="text/javascript" src="script.js">
+        </script>
+
+
+    </body>
+
+    </html>
