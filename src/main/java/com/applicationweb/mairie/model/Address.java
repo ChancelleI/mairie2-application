@@ -59,8 +59,11 @@ public class Address {
 		this.email = email;
 		this.quartier = quartier;
 	}
-	
-	
+	@Override
+	public String toString() {
+		return "Address [id=" + id + ", ville=" + ville + ", contact=" + contact + ", email=" + email + ", quartier="
+				+ quartier + "]";
+	}
 	
 	
 

@@ -16,7 +16,7 @@ import javax.persistence.OneToOne;
 public class Commune {
 
 	@Id
-	@GeneratedValue (strategy = GenerationType.AUTO)
+	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	private Long id_commune;
 	private String nomCommune;
 	
@@ -60,6 +60,11 @@ public class Commune {
 	public void setAddress(Address address) {
 		this.address = address;
 	}
+	
+	public Commune() {
+		
+		
+	}
 
 	public Commune(String nomCommune, Address address, Department department) {
 		super();
@@ -68,14 +73,11 @@ public class Commune {
 		this.department = department;
 	}
 
-	
-
-	
-
-	
-	
-	
-
+	@Override
+	public String toString() {
+		return "Commune [id_commune=" + id_commune + ", nomCommune=" + nomCommune + ", address=" + address
+				+ ", department=" + department + "]";
+	}
 
 	
 	}

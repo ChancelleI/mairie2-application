@@ -1,287 +1,303 @@
 <!DOCrequired TYPE html>
-    <html lang="pt-br">
+<html lang="pt-br">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Dashboard Administrateur</title>
-        <link rel="stylesheet" th:href="@{/css/utilisateur1.css}"/>
-        <link rel="stylesheet" th:href="@{/css/style.css}"/>
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet"
-            required type="text/css">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    </head>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard Administrateur</title>
+<link rel="stylesheet" th:href="@{/css/utilisateur1.css}" />
+<link rel="stylesheet" th:href="@{/css/style.css}" />
+<link
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+	rel="stylesheet" required type="text/css">
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
 
-    <body>
+<body>
 
-        <!--wrapper start-->
-        <div class="wrapper">
-            <!--header start-->
-            <div class="header">
-                <div class="header-menu">
-                    <div class="title">Super<span>Admin</span></div>
-                    <!-- <div class="sidebar-btn">
+	<!--wrapper start-->
+	<div class="wrapper">
+		<!--header start-->
+		<div class="header">
+			<div class="header-menu">
+				<div class="title">
+					Super<span>Admin</span>
+				</div>
+				<!-- <div class="sidebar-btn">
                     <i class="fas fa-bars"></i>
                 </div> -->
-                    <ul>
-                        <li><a class="menu-icon" href=""><i class="fas fa-search"></i></a></li>
-                        <li><a class="menu-icon" href=""><i class="fas fa-bell"></i></a></li>
-                        <li><a class="menu-icon" href=""><i class="fas fa-power-off"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-            <!--header menu end-->
-            <!--sidebar start-->
-            <div class="sidebar">
-                <div class="sidebar-menu">
-                    <center class="profile">
-                        <img th:src="@{/images/default-admin.png}" alt="">
-                        <p>Administrateur</p>
-                    </center>
-                    <li class="item">
-                        <a href="#dash" class="menu-btn" data-toggle="tab">
-                            <i class="fas fa-desktop"></i><span>Dashboard</span>
-                        </a>
-                    </li>
-                    <li class="item" id="profile">
-                        <a href="#profile" class="menu-btn">
-                            <i class="fas fa-user-circle"></i><span>Profile <i
-                                    class="fas fa-chevron-down drop-down"></i></span>
-                        </a>
-                        <div class="sub-menu">
-                            <a href="#"><i class="fas fa-image"></i><span>Picture</span></a>
-                            <a href="#"><i class="fas fa-address-card"></i><span>Info</span></a>
-                        </div>
-                    </li>
-                    <li class="item" id="acte">
-                        <a href="#profile" class="menu-btn">
-                            <i class="fas fa-envelope"></i><span>Gestion des Actes<i
-                                    class="fas fa-chevron-down drop-down"></i></span>
-                        </a>
-                        <div class="sub-menu">
-                            <ul>
-                                <li><a  th:href="@{/naisance}"><i
-                                            class="fas font-family"></i><span>naissance</span></a> </li>
-                                <li><a  href="mariage.html"><i
-                                            class="fas font-family"></i><span>mariage</span></a></li>
-                                <li><a  href="deces.html"><i
-                                            class="fas font-family"></i><span>deces</span></a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="item" id="marie">
-                        <a href="#profile" class="menu-btn">
-                            <i class="fas fa-image"></i><span>Gestion des mairie<i
-                                    class="fas fa-chevron-down drop-down"></i></span>
-                        </a>
-                        <div class="sub-menu">
-                            <a href="mairie.html"><i class="fas fa-lock"></i><span>Ajouter une mairie</span></a>
-                            <a href="#"><i class="fas fa-lock"></i><span>consulter</span></a>
-                        </div>
-                    </li>
-                    <li class="item" id="user">
-                        <a href="#profile" class="menu-btn">
-                            <i class="fas fa-user-circle"></i><span>Gestion des Admin<i
-                                    class="fas fa-chevron-down drop-down"></i></span>
-                        </a>
-                        <div class="sub-menu">
-                            <a href="admin.html"><i class="fas fa-lock"><span>Ajouter un Administrateur</span></i></a>
-                            <a href="#"><i class="fas fa-lock"><span>consulter</span></i></a>
-                        </div>
-                    </li>
-                </div>
-            </div>
-            <!--sidebar end-->
-            <!--main container start-->
-            <div class="main-container tab-content" style="display: block;">
+				<ul>
+					<li><a class="menu-icon" href=""><i class="fas fa-search"></i></a></li>
+					<li><a class="menu-icon" href=""><i class="fas fa-bell"></i></a></li>
+					<li><a class="menu-icon" href=""><i
+							class="fas fa-power-off"></i></a></li>
+				</ul>
+			</div>
+		</div>
+		<!--header menu end-->
+		<!--sidebar start-->
+		<div class="sidebar">
+			<div class="sidebar-menu">
+				<center class="profile">
+					<img th:src="@{/images/default-admin.png}" alt="">
+					<p>Administrateur</p>
+				</center>
+				<li class="item"><a href="#dash" class="menu-btn"
+					data-toggle="tab"> <i class="fas fa-desktop"></i><span>Dashboard</span>
+				</a></li>
+				<li class="item" id="profile"><a href="#profile"
+					class="menu-btn"> <i class="fas fa-user-circle"></i><span>Profile
+							<i class="fas fa-chevron-down drop-down"></i>
+					</span>
+				</a>
+					<div class="sub-menu">
+						<a href="#"><i class="fas fa-image"></i><span>Picture</span></a> <a
+							href="#"><i class="fas fa-address-card"></i><span>Info</span></a>
+					</div></li>
+				<li class="item" id="acte"><a href="#profile" class="menu-btn">
+						<i class="fas fa-envelope"></i><span>Gestion des Actes<i
+							class="fas fa-chevron-down drop-down"></i></span>
+				</a>
+					<div class="sub-menu">
+						<ul>
+							<li><a th:href="@{/naisance}"><i class="fas font-family"></i><span>naissance</span></a>
+							</li>
+							<li><a th:href="@{/mariage}"><i class="fas font-family"></i><span>mariage</span></a></li>
+							<li><a t:href="@{/deces}"><i class="fas font-family"></i><span>deces</span></a>
+							</li>
+						</ul>
+					</div></li>
+				<li class="item" id="marie"><a href="#profile" class="menu-btn">
+						<i class="fas fa-image"></i><span>Gestion des mairie<i
+							class="fas fa-chevron-down drop-down"></i></span>
+				</a>
+					<div class="sub-menu">
+						<a th:href="@{/mairie}"><i class="fas fa-lock"></i><span>Ajouter
+								une mairie</span></a> <a href="#"><i class="fas fa-lock"></i><span>consulter</span></a>
+					</div></li>
+				<li class="item" id="user"><a href="#profile" class="menu-btn">
+						<i class="fas fa-user-circle"></i><span>Gestion des Admin<i
+							class="fas fa-chevron-down drop-down"></i></span>
+				</a>
+					<div class="sub-menu">
+						<a th:href="@{/admin}"><i class="fas fa-lock"><span>Ajouter
+									un Administrateur</span></i></a>
 
-                <div class="modal">
-                    <div class="pop">
+					</div></li>
+			</div>
+		</div>
+		<!--sidebar end-->
+		<!--main container start-->
+		<div class="main-container tab-content" style="display: block;">
+
+			<div class="modal">
+				<div class="pop">
+					<form method="post" th:action="@{/saveBirth}" th:object="${birth}">
+						<div class="close-modal">
+							<span>&times;</span>
+						</div>
+						<header>
+							<h3>ENREGISTRER UNE NAISSANCE</h3>
+							<div id="pageNumber"></div>
+						</header>
+
+
+						<div class="page" id="page1">
+							<h4>Identité de l'enfant</h4>
+							<div class="input">
+								<input th:field="*{nom_enfant}" required type="text"> <label
+									for="pseudo">nom de l'enfant</label>
+							</div>
+							<div class="input">
+								<input th:field="*{dateNaissEnfant}" required type="text">
+								<label for="lie">lieu naissance</label>
+							</div>
+							<div class="input">
+								<input th:field="*{lieuNaissEnfant}" required type="date">
+								<label for="numero">date naissance</label>
+							</div>
+							<div class="input">
+								<select th:field="*{sexeEnfant}" class="select" id="sexe">
+									<option value="feminin">feminin</option>
+									<option value="masculin">masculin</option>
+								</select>
+							</div>
+							<div class="submitbtn">
+								<button class="next" required type="button">Suivant</button>
+							</div>
+						</div>
+
+						<div class="page" id="page2">
+							<h4>Identité du père</h4>
+							<div class="input">
+								<input th:field="*{pere.nomPers}" required type="text"
+									name="nom" id="nom"> <label for="nom">nom du
+									pere</label>
+							</div>
+							<div class="input">
+								<input th:field="*{pere.lieuNaissance}" required type="text"
+									name="pseudo" id="pseudo"> <label for="pseudo">lieu
+									de naissance du pere</label>
+							</div>
+							<div class="input">
+								<input th:field="*{pere.dateNaissance}" required type="date">
+								<label for="numero">date naissance</label>
+							</div>
+							<div class="input">
+								<input th:field="*{pere.lieuResidence}" required type="text"
+									name="lieu" id="lieu"> <label for="lie">lieu de
+									residence du père</label>
+							</div>
+							<div class="input">
+								<input th:field="*{pere.profession}" required type="text">
+								<label for="numero">prefession du père</label>
+							</div>
+							<div class="submitbtn">
+								<button class="prev" required type="button">Précédent</button>
+								<button class="next" required type="button">Suivant</button>
+							</div>
+						</div>
+
+
+						<div class="page" id="page3">
+							<h4>Identité de la mere</h4>
+							<div class="input">
+								<input th:field="*{mere.nomPers}" required type="text"
+									name="nom" id="nom"> <label for="nom">nom de la
+									mere</label>
+							</div>
+							<div class="input">
+								<input th:field="*{mere.lieuNaissance}" required type="text"
+									name="pseudo" id="pseudo"> <label for="pseudo">lieu
+									de naissance de la mere</label>
+							</div>
+							<div class="input">
+								<input th:field="*{mere.dateNaissance}" required type="date">
+								<label for="numero">date naissance</label>
+							</div>
+							<div class="input">
+								<input th:field="*{mere.lieuResidence}" required type="text"
+									name="lieu" id="lieu"> <label for="lie">lieu de
+									residence de la mere</label>
+							</div>
+							<div class="input">
+								<input th:field="*{mere.profession}" required type="text">
+								<label for="numero">prefession de la mere</label>
+							</div>
+							<div class="submitbtn">
+								<button class="prev" required type="button">Précédent</button>
+								<button class="next" required type="button">Suivant</button>
+							</div>
+						</div>
+
+
+						<div class="page" id="page4">
+							<h4>informations General</h4>
+							<div class="input">
+								<input th:field="*{dateFabriqueACte}" required type="date"
+									id="region"> <label for="dresse">acte dresseé</label>
+							</div>
+							<div class="input">
+								<input th:field="*{nomDeclarant}" required type="text"
+									id="depart"> <label for="declaration">nom
+									medecin declarant</label>
+							</div>
+							<div class="input">
+								<input th:field="*{numActeMariage}" required type="text"
+									id="arron"> <label for="acte mariage">numero
+									acte mariage</label>
+							</div>
+							<div class="input">
+								<label for="etat civil">nom du centre d'etat civil</label> <br />
+								<select th:field="*{commune}">
+									<option th:each="commune : ${communeList}"
+										th:value="${commune.id_commune}"
+										th:text="${commune.nomCommune}"></option>
+								</select>
+							</div>
+							<div class="input">
+								<input th:field="*{nomAssistant}" required type="text"
+									id="profession"> <label for="assisté">nom de
+									l'assistant d'etat civil</label>
+							</div>
+							<div class="submitbtn">
+								<button class="prev" type="button">Précédent</button>
+								<button type="submit">Terminer</button>
+							</div>
+						</div>
+					</form>
+
+				</div>
+
+			</div>
+
+			<header>
+				<h3>Gestion des naisances</h3>
+			</header>
+			<nav>
+				<button class="js_addbtn">+ Ajouter</button>
+				<div class="search">
+					<i class="fa fa-search"></i> <input required type="text"
+						placeholder="Rechercher" id="search">
+				</div>
+			</nav>
+			<div class="flex-row" style="margin-top: 20px;">
+				<article>
+					<table id="tab">
+						<thead>
+							<tr>
+								<th>numero</th>
+								<th>Nom</th>
+								<th>Date de naissance</th>
+								<th>Sexe</th>
+								<th>nom du pere</th>
+								<th>nom de la mere</th>
+								<th colspan="2">action</th>
+							</tr>
+						</thead>
+						<tr th:each="birth : ${birthList}">
+							<td th:text="${birth.id}"></td>
+							<td th:text="${birth.nom_enfant}"></td>
+							<td th:text="${birth.dateNaissEnfant}"></td>
+							<td th:text="${birth.sexeEnfant}"></td>
+							<td th:text="${birth.pere.nomPers}"></td>
+							<td th:text="${birth.mere.nomPers}"></td>
+							<td><a 
+									th:href="@{/deleteBirth/{id}(id=${birth.id})}"
+									id="d" class="btn btn-danger">Suprimer
+							</a></td>
+							<td><a
+								href="#"
+								id="d" class="btn btn-success">editer</a></td>
+						</tr>
+					</table>
+					<!--
                         <form method="post" th:action="@{/saveBirth}" th:object="${birth}">
-                            <div class="close-modal">
-                                <span>&times;</span>
-                            </div>
-                            <header>
-                                <h3>ENREGISTRER UNE NAISSANCE </h3>
-                                <div id="pageNumber">
-
-                                </div>
-                            </header>
-                            <div class="page" id="page1">
-                                <h4>Identité de l'enfant</h4>
-                                <div class="input">
-                                    <input  required type="text" name="nom" id="nomenfant">
-                                    <label for="nom">numero de l'acte</label>
-                                </div>
-                                <div class="input">
-                                    <input th:field="*{nom_enfant}" required type="text">
-                                    <label for="pseudo">nom de l'enfant</label>
-                                </div>
-                                <div class="input">
-                                    <input th:field="*{dateNaissEnfant}" required type="text">
-                                    <label for="lie">lieu naissance</label>
-                                </div>
-                                <div class="input">
-                                    <input th:field="*{lieuNaissEnfant}" required type="text">
-                                    <label for="numero">date naissance</label>
-                                </div>
-                                <div class="input">
-                                    <select  class="select" id="sexe">
-                                        <option value="feminin">feminin</option>
-                                        <option value="masculin">masculin</option>
-                                    </select >
-                                </div>
-                                <div class="submitbtn">
-                                    <button class="next" required type="button">Suivant</button>
-                                </div>
-                            </div>
-
-                            <div class="page" id="page2">
-                                <h4>Identité du père</h4>
-                                <div class="input">
-                                    <input th:field="*{pere.nomPers}" required type="text" name="nom" id="nom">
-                                    <label for="nom">nom du pere</label>
-                                </div>
-                                <div class="input">
-                                    <input th:field="*{pere.lieuNaissance}" required type="text" name="pseudo" id="pseudo">
-                                    <label for="pseudo">lieu de naissance du pere</label>
-                                </div>
-                                <div class="input">
-                                    <input th:field="*{pere.dateNaissance}" required type="date">
-                                    <label for="numero">date naissance</label>
-                                </div>
-                                <div class="input">
-                                    <input th:field="*{pere.lieuResidence}" required type="text" name="lieu" id="lieu">
-                                    <label for="lie">lieu de residence du père</label>
-                                </div>
-                                <div class="input">
-                                    <input th:field="*{pere.profession}" required type="text">
-                                    <label for="numero">prefession du père</label>
-                                </div>
-                                <div class="submitbtn">
-                                    <button class="prev" required type="button">Précédent</button>
-                                    <button class="next" required type="button">Suivant</button>
-                                </div>
-                            </div>
-
-                            <div class="page" id="page3">
-                                <h4>Identité de la mere</h4>
-                                <div class="input">
-                                    <input th:field="*{mere.nomPers}" required type="text" name="nom" id="nom">
-                                    <label for="nom">nom de la mere</label>
-                                </div>
-                                <div class="input">
-                                    <input th:field="*{mere.lieuNaissance}" required type="text" name="pseudo" id="pseudo">
-                                    <label for="pseudo">lieu de naissance de la mere</label>
-                                </div>
-                                <div class="input">
-                                    <input th:field="*{mere.dateNaissance}" required type="date">
-                                    <label for="numero">date naissance</label>
-                                </div>
-                                <div class="input">
-                                    <input th:field="*{mere.lieuResidence}" required type="text" name="lieu" id="lieu">
-                                    <label for="lie">lieu de residence de la mere</label>
-                                </div>
-                                <div class="input">
-                                    <input th:field="*{mere.profession}" required type="text">
-                                    <label for="numero">prefession de la mere</label>
-                                </div>
-                                <div class="submitbtn">
-                                    <button class="prev" required type="button">Précédent</button>
-                                    <button class="next" required type="button">Suivant</button>
-                                </div>
-                            </div>
-                            <div class="page" id="page4">
-                                <h4>informations General</h4>
-                                <div class="input">
-                                    <input th:field="*{dateFabriqueACte}" required type="date" id="region">
-                                    <label for="dresse">acte dresseé</label>
-                                </div>
-                                <div class="input">
-                                    <input th:field="*{nomDeclarant}"  required type="text" id="depart">
-                                    <label for="declaration">nom medecin declarant</label>
-                                </div>
-                                <div class="input">
-                                    <input th:field="*{numActeMariage}" required type="text" id="arron">
-                                    <label for="acte mariage">numero acte mariage</label>
-                                </div>
-                                <div class="input">
-                                    <input th:field="*{centreEtat}" required type="text" id="profession">
-                                    <label for="etat civil">nom du centre d'etat civil</label>
-                                </div>
-                                <div class="input">
-                                    <input th:field="*{nomAssistant}" required type="text" id="profession">
-                                    <label for="assisté">nom de l'assistant d'etat civil</label>
-                                </div>
-                                <div class="submitbtn">
-                                    <button class="prev" type="button">Précédent</button>
-                                    <button class="fin" type="submit">Terminer</button>
-                                </div>
-                            </div>
+                        <p>nom_enfant: <input type="text" th:field="*{nom_enfant}" /></p>
+                        <p>lieuNaissEnfant: <input type="text" th:field="*{lieuNaissEnfant}" /></p>
+                        <p><input type="submit" value="Submit" />
                         </form>
+                        -->
 
-                    </div>
+				</article>
+			</div>
 
-                </div>
+		</div>
+		<!--main container end-->
+	</div>
+	<!--wrapper end-->
 
-                <header>
-                    <h3>Gestion des naisances </h3>
-                </header>
-                <nav>
-                    <button class="js_addbtn">+ Ajouter</button>
-                    <div class="search">
-                        <i class="fa fa-search"></i>
-                        <input required type="text" placeholder="Rechercher" id="search">
-                    </div>
-                </nav>
-                <div class="flex-row" style="margin-top: 20px;">
-                    <article>
-                        <table id="tab">
-                            <thead>
-                                <tr>
-                                    <th>numero</th>
-                                    <th>Nom</th>
-                                    <th class="pseudo">Pseudo</th>
-                                    <th class="email">Date de naissance</th>
-                                    <th>nom du pere </th>
-                                    <th>nom de la mere </th>
-                                    <th colspan="2">
-                                        action
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tr>
-                                <td>0001</td>
-                                <td> Rivaldes </td>
-                                <td> Chancel </td>
-                                <td> 10/20/1999 </td>
-                                <td> Franck </td>
-                                <td> Ange </td>
-                                <td>
-                                    <button>Suprimer</button>
-                                </td>
-                                <td>
-                                    <button>Editer</button>
-                                </td>
-                            </tr>
-                        </table>
-
-                    </article>
-                </div>
-
-            </div>
-            <!--main container end-->
-        </div>
-        <!--wrapper end-->
-
-        <script required type="text/javascript" th:src="@{/js/script.js}">
-        </script>
-        
+	<script required type="text/javascript" th:src="@{/js/script.js}">
+		
+	</script>
 
 
-    </body>
 
-    </html>
+</body>
+
+</html>

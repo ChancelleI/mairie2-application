@@ -67,8 +67,8 @@
                     <div class="sub-menu">
                         <ul>
                             <li><a th:href="@{/naisance}"><i class="fas font-family"></i><span>naissance</span></a> </li>
-                            <li><a href="mariage.html"><i class="fas font-family"></i><span>mariage</span></a></li>
-                            <li><a href="deces.html"><i class="fas font-family"></i><span>deces</span></a>
+                            <li><a th:href="@{/mariage}"><i class="fas font-family"></i><span>mariage</span></a></li>
+                            <li><a th:href="@{/deces}"><i class="fas font-family"></i><span>deces</span></a>
                             </li>
                         </ul>
                     </div>
@@ -79,8 +79,8 @@
                                 class="fas fa-chevron-down drop-down"></i></span>
                     </a>
                     <div class="sub-menu">
-                        <a href="mairie.html"><i class="fas fa-lock"></i><span>Ajouter une mairie</span></a>
-                        <a href="#"><i class="fas fa-lock"></i><span>consulter</span></a>
+                        <a th:href="@{/mairie}"><i class="fas fa-lock"></i><span>Ajouter une mairie</span></a>
+                        
                     </div>
                 </li>
                 <li class="item" id="user">
@@ -89,7 +89,7 @@
                                 class="fas fa-chevron-down drop-down"></i></span>
                     </a>
                     <div class="sub-menu">
-                        <a href="admin.html"><i class="fas fa-lock"><span>Ajouter un Administrateur</span></i></a>
+                        <a th:href="@{/admin}"><i class="fas fa-lock"><span>Ajouter un Administrateur</span></i></a>
                         <a href="#"><i class="fas fa-lock"><span>consulter</span></i></a>
                     </div>
                 </li>

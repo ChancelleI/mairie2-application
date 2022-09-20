@@ -13,7 +13,7 @@ import javax.persistence.ManyToOne;
 @Entity
 public class Department {
 	@Id
-	@GeneratedValue (strategy = GenerationType.AUTO)
+	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String nomDepartement;
 	
@@ -26,7 +26,7 @@ public class Department {
 	public Long getId() {
 		return id;
 	}
-	public void setId_Department(Long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	public String getNomDepartement() {
@@ -42,12 +42,19 @@ public class Department {
 	public void setRegion(Region region) {
 		this.region = region;
 	}
+	
+	public Department() {
+		super();
+	}
 	public Department(String nomDepartement, Region region) {
 		super();
 		this.nomDepartement = nomDepartement;
 		this.region = region;
 	}
-	
+	@Override
+	public String toString() {
+		return "Department [id=" + id + ", nomDepartement=" + nomDepartement + ", region=" + region + "]";
+	}
 	
 	
 

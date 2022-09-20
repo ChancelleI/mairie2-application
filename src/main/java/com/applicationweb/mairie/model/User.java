@@ -19,7 +19,7 @@ import javax.persistence.ManyToMany;
 @Entity
 public class User {
 	@Id
-	@GeneratedValue (strategy = GenerationType.AUTO)
+	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	private Long id_User;
 	private String nom;
 	private String prenom;

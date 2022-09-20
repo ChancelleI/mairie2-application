@@ -1,227 +1,238 @@
 <!DOCrequired TYPE html>
-    <html lang="pt-br">
+<html lang="pt-br">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Dashboard Administrateur</title>
-        <link rel="stylesheet" href="style/utilisateur1.css">
-        <link rel="stylesheet" href="style/style.css">
-        <link rel="stylesheet" href="style/ajoutUtilisateur.css">
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet"
-            required type="text/css">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    </head>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard Administrateur</title>
+<link rel="stylesheet" th:href="@{/css/utilisateur1.css}" />
+<link rel="stylesheet" th:href="@{/css/style.css}" />
+<link rel="stylesheet" th:href="@{/css/ajoutUtilisateur.css}" />
+<link
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+	rel="stylesheet" required type="text/css">
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
 
-    <body>
+<body>
 
-        <!--wrapper start-->
-        <div class="wrapper">
-            <!--header start-->
-            <div class="header">
-                <div class="header-menu">
-                    <div class="title">Super<span>Admin</span></div>
-                    <!-- <div class="sidebar-btn">
+	<!--wrapper start-->
+	<div class="wrapper">
+		<!--header start-->
+		<div class="header">
+			<div class="header-menu">
+				<div class="title">
+					Super<span>Admin</span>
+				</div>
+				<!-- <div class="sidebar-btn">
                     <i class="fas fa-bars"></i>
                 </div> -->
-                    <ul>
-                        <li><a class="menu-icon" href=""><i class="fas fa-search"></i></a></li>
-                        <li><a class="menu-icon" href=""><i class="fas fa-bell"></i></a></li>
-                        <li><a class="menu-icon" href=""><i class="fas fa-power-off"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-            <!--header menu end-->
-            <!--sidebar start-->
-            <div class="sidebar">
-                <div class="sidebar-menu">
-                    <center class="profile">
-                        <img src="./assets/images/default-admin.png" alt="">
-                        <p>Administrateur</p>
-                    </center>
-                    <li class="item">
-                        <a href="#dash" class="menu-btn" data-toggle="tab">
-                            <i class="fas fa-desktop"></i><span>Dashboard</span>
-                        </a>
-                    </li>
-                    <li class="item" id="profile">
-                        <a href="#profile" class="menu-btn">
-                            <i class="fas fa-user-circle"></i><span>Profile <i
-                                    class="fas fa-chevron-down drop-down"></i></span>
-                        </a>
-                        <div class="sub-menu">
-                            <a href="#"><i class="fas fa-image"></i><span>Picture</span></a>
-                            <a href="#"><i class="fas fa-address-card"></i><span>Info</span></a>
-                        </div>
-                    </li>
-                    <li class="item" id="acte">
-                        <a href="#profile" class="menu-btn">
-                            <i class="fas fa-envelope"></i><span>Gestion des Actes<i
-                                    class="fas fa-chevron-down drop-down"></i></span>
-                        </a>
-                        <div class="sub-menu">
-                            <ul>
-                                <li><a href="naisance.html"><i class="fas font-family"></i><span>naissance</span></a>
-                                </li>
-                                <li><a href="mariage.html"><i class="fas font-family"></i><span>mariage</span></a></li>
-                                <li><a href="deces.html"><i class="fas font-family"></i><span>deces</span></a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="item" id="marie">
-                        <a href="#profile" class="menu-btn">
-                            <i class="fas fa-image"></i><span>Gestion des mairie<i
-                                    class="fas fa-chevron-down drop-down"></i></span>
-                        </a>
-                        <div class="sub-menu">
-                            <a href="mairie.html"><i class="fas fa-lock"></i><span>Ajouter une mairie</span></a>
-                            <a href="#"><i class="fas fa-lock"></i><span>consulter</span></a>
-                        </div>
-                    </li>
-                    <li class="item" id="user">
-                        <a href="#profile" class="menu-btn">
-                            <i class="fas fa-user-circle"></i><span>Gestion des Admin<i
-                                    class="fas fa-chevron-down drop-down"></i></span>
-                        </a>
-                        <div class="sub-menu">
-                            <a href="admin.html"><i class="fas fa-lock"><span>Ajouter un Administrateur</span></i></a>
-                            <a href="#"><i class="fas fa-lock"><span>consulter</span></i></a>
-                        </div>
-                    </li>
-                </div>
-            </div>
-            <!--sidebar end-->
-            <!--main container start-->
-            <div class="main-container tab-content" style="display: block;">
+				<ul>
+					<li><a class="menu-icon" href=""><i class="fas fa-search"></i></a></li>
+					<li><a class="menu-icon" href=""><i class="fas fa-bell"></i></a></li>
+					<li><a class="menu-icon" href=""><i
+							class="fas fa-power-off"></i></a></li>
+				</ul>
+			</div>
+		</div>
+		<!--header menu end-->
+		<!--sidebar start-->
+		<div class="sidebar">
+			<div class="sidebar-menu">
+				<center class="profile">
+					<img th:src="@{/images/default-admin.png}" alt="">
+					<p>Administrateur</p>
+				</center>
+				<li class="item"><a href="#dash" class="menu-btn"
+					data-toggle="tab"> <i class="fas fa-desktop"></i><span>Dashboard</span>
+				</a></li>
+				<li class="item" id="profile"><a href="#profile"
+					class="menu-btn"> <i class="fas fa-user-circle"></i><span>Profile
+							<i class="fas fa-chevron-down drop-down"></i>
+					</span>
+				</a>
+					<div class="sub-menu">
+						<a href="#"><i class="fas fa-image"></i><span>Picture</span></a> <a
+							href="#"><i class="fas fa-address-card"></i><span>Info</span></a>
+					</div></li>
+				<li class="item" id="acte"><a href="#profile" class="menu-btn">
+						<i class="fas fa-envelope"></i><span>Gestion des Actes<i
+							class="fas fa-chevron-down drop-down"></i></span>
+				</a>
+					<div class="sub-menu">
+						<ul>
+							<li><a th:href="@{/naisance}"><i class="fas font-family"></i><span>naissance</span></a>
+							</li>
+							<li><a th:href="@{/mariage}"><i class="fas font-family"></i><span>mariage</span></a></li>
+							<li><a th:href="@{/deces}"><i class="fas font-family"></i><span>deces</span></a>
+							</li>
+						</ul>
+					</div></li>
+				<li class="item" id="marie"><a href="#profile" class="menu-btn">
+						<i class="fas fa-image"></i><span>Gestion des mairie<i
+							class="fas fa-chevron-down drop-down"></i></span>
+				</a>
+					<div class="sub-menu">
+						<a th:href="@{/mairie}"><i class="fas fa-lock"></i><span>Ajouter
+								une mairie</span></a> <a href="#"><i class="fas fa-lock"></i><span>consulter</span></a>
+					</div></li>
+				<li class="item" id="user"><a href="#profile" class="menu-btn">
+						<i class="fas fa-user-circle"></i><span>Gestion des Admin<i
+							class="fas fa-chevron-down drop-down"></i></span>
+				</a>
+					<div class="sub-menu">
+						<a th:href="@{/admin}"><i class="fas fa-lock"><span>Ajouter
+									un Administrateur</span></i></a>
 
-                <div class="modal">
-                    <div class="pop">
-                        <form method="post">
-                            <div class="close-modal">
-                                <span>&times;</span>
-                            </div>
-                            <header>
-                                <h3>ENREGISTRER UNE Commune</h3>
-                            </header>
-                                <div class="form-conatiner">
-                                    <div class="form-row">
-                                        <div class="input-container">
-                                        <label> Nom *</label>
-                                            <div>
-                                              <i class="fa fa-user"></i>
-                                              <input type="text" placeholder="Entrer le nom de la commune" />
-                                            </div>
-                                        </div>
-                                        <div class="input-container">
-                                            <label> departement*</label>
-                                            <div>
-                                                 <i class="fa fa-user"></i>
-                                                 <input type="text" placeholder="Entrer nom du departement" />
-                                            </div>
-                                       </div>
-                                    </div>
+					</div></li>
+			</div>
+		</div>
+		<!--sidebar end-->
+		<!--main container start-->
+		<div class="main-container tab-content" style="display: block;">
 
-                                    <div class="form-row">
-                                        <div class="input-container">
-                                            <label>ville*</label>
-                                            <div>
-                                                 <i class="fa fa-user"></i>
-                                                 <input type="text" placeholder="Entre l'adresse/ville"/>
-                                            </div>
-                                       </div>
-                                       <div class="input-container">
-                                            <label>Contact*</label>
-                                            <div>
-                                             <i class="fa fa-phone"></i>
-                                             <input type="text" placeholder="Entrer l'adresse/Contact"/>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-row">
-                                            <div class="input-container">
-                                                <label>Quartier*</label>
-                                                <div>
-                                                 <i class="fa fa-phone"></i>
-                                                 <input type="text" placeholder="Entrer l'adresse/Quartier" />
-                                                </div>
-                                            </div>
-                                            <div class="input-container">
-                                                    <label> Email*</label>
-                                                    <div>
-                                                     <i class="fa fa-mail-bulk"></i>
-                                                     <input type="email" placeholder="Entrer l'adresse/Email" />
-                                                    </div>
-                                           </div>
-                                    </div>
-                                </div>
-                                <div class="submitbtn" style="margin:20px 0 ;">
-                                    <button  type="button">Anuller</button>
-                                    <button class="fin">Creer</button>
-                                </div>
+			<div class="modal">
+				<div class="pop">
+					<form method="post" th:action="@{/saveCommune}"
+						th:object="${commune}">
+						<div class="close-modal">
+							<span>&times;</span>
+						</div>
+						<header>
+							<h3>ENREGISTRER UNE Commune</h3>
+						</header>
+						<div class="form-conatiner">
+							<div class="form-row">
+								<div class="input-container">
+									<label> Nom *</label>
+									<div>
+										<i class="fa fa-user"></i> <input th:field="*{nomCommune}"
+											type="text" placeholder="Entrer le nom de la commune" />
+									</div>
+								</div>
+								<div class="input-container">
+									<label> departement*</label>
+									<div>
+										<i class="fa fa-user"></i>
+										<!--
+													<input th:field="*{department}" type="text" placeholder="Entrer le nom de votre departement" />
+												-->
+										<select th:field="*{department}">
+											<option th:each="department : ${departmentList}"
+												th:value="${department.id}"
+												th:text="${department.nomDepartement}"></option>
+										</select>
 
-                        </form>
+									</div>
+								</div>
+							</div>
 
-                    </div>
+							<div class="form-row">
+								<div class="input-container">
+									<label>ville*</label>
+									<div>
+										<i class="fa fa-user"></i> <input th:field="*{Address.ville}"
+											type="text" placeholder="Entre l'adresse/ville" />
+									</div>
+								</div>
+								<div class="input-container">
+									<label>Contact*</label>
+									<div>
+										<i class="fa fa-phone"></i> <input
+											th:field="*{Address.contact}" type="number"
+											placeholder="Entrer l'adresse/Contact" />
+									</div>
+								</div>
+							</div>
+							<div class="form-row">
+								<div class="input-container">
+									<label>Quartier*</label>
+									<div>
+										<i class="fa fa-phone"></i> <input
+											th:field="*{Address.quartier}" type="text"
+											placeholder="Entrer l'adresse/Quartier" />
+									</div>
+								</div>
+								<div class="input-container">
+									<label> Email*</label>
+									<div>
+										<i class="fa fa-mail-bulk"></i> <input
+											th:field="*{Address.email}" type="email"
+											placeholder="Entrer l'adresse/Email" />
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="submitbtn" style="margin: 20px 0;">
+							<button type="button">Anuller</button>
+							<button class="fin">Creer</button>
+						</div>
 
-                </div>
+					</form>
 
-                <header>
-                    <h3>Gestion des Communes </h3>
-                </header>
-                <nav>
-                    <button class="js_addbtn">+ Ajouter</button>
-                    <div class="search">
-                        <i class="fa fa-search"></i>
-                        <input required type="text" placeholder="Rechercher" id="search">
-                    </div>
-                </nav>
-                <div class="flex-row" style="margin-top: 20px;">
-                    <article>
-                        <table id="tab">
-                            <thead>
-                                <tr>
-                                    <th>Commune Nom</th>
-                                    <th >Departement</th>
-                                    <th >Ville</th>
-                                    <th class="email">contact</th>
-                                    <th >Quartier</th>
-                                    <th>Email </th>
-                                    <th colspan="2">
-                                        action
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tr>
-                                <td>FONGO-TONGO</td>
-                                <td>Menoua</td>
-                                <td>Dschang</td>
-                                <td>676739822</td>
-                                <td>Quartier cetic</td>
-                                <td>Chancelle@gmail.com</td>
-                                <td>
-                                    <button>Suprimer</button>
-                                </td>
-                                <td>
-                                    <button>Editer</button>
-                                </td>
-                            </tr>
-                        </table>
+				</div>
 
-                    </article>
-                </div>
+			</div>
 
-            </div>
-            <!--main container end-->
-        </div>
-        <!--wrapper end-->
+			<header>
+				<h3>Gestion des Communes</h3>
+			</header>
+			<nav>
+				<button class="js_addbtn">+ Ajouter</button>
+				<div class="search">
+					<i class="fa fa-search"></i> <input required type="text"
+						placeholder="Rechercher" id="search">
+				</div>
+			</nav>
+			<div class="flex-row" style="margin-top: 20px;">
+				<article>
+					<table id="tab">
+						<thead>
+							<tr>
+								<th>Commune Nom</th>
+								<th>Departement</th>
+								<th>Ville</th>
+								<th class="email">contact</th>
+								<th>Quartier</th>
+								<th>Email</th>
+								<th colspan="2">action</th>
+							</tr>
+						</thead>
+						<tr th:each="commune : ${communeList}">
+							<td th:text="${commune.nomCommune}"></td>
+							<td th:text="${commune.department.nomDepartement}"></td>
+							<td th:text="${commune.address.ville}"></td>
+							<td th:text="${commune.address.contact}"></td>
+							<td th:text="${commune.address.quartier}"></td>
+							<td th:text="${commune.address.email}"></td>
+							<td><a
+								th:href="@{/deleteCommune/{id}(id=${commune.id_commune})}"
+								id="d" class="btn btn-danger">Suprimer</a></td>
+							<td><a
+								th:href="@{/updateCommune/{id}(id=${commune.id_commune})}"
+								id="d" class="btn btn-success">editer</a></td>
+						</tr>
 
-        <script required type="text/javascript" src="script.js">
-        </script>
+					</table>
+
+				</article>
+			</div>
+
+		</div>
+		<!--main container end-->
+	</div>
+	<!--wrapper end-->
+
+	<script required type="text/javascript" th:src="@{/js/script.js}">
+		
+	</script>
 
 
-    </body>
+</body>
 
-    </html>
+</html>

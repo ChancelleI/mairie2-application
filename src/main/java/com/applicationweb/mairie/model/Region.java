@@ -11,13 +11,17 @@ import javax.persistence.Id;
 @Entity
 public class Region {
 	@Id
-	@GeneratedValue (strategy = GenerationType.AUTO)
+	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String nomRegion;
 	
 //	@OneToMany @JoinColumn(name="id_Region")
 //	private List<Department> departments= new ArrayList<>();
 
+	public Region() {
+		
+	}
+	
 	public Long getId() {
 		return id;
 	}

@@ -5,8 +5,8 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Dashboard Administrateur</title>
-        <link rel="stylesheet" href="style/utilisateur1.css">
-        <link rel="stylesheet" href="style/style.css">
+        <link rel="stylesheet" th:href="@{/css/utilisateur1.css}">
+        <link rel="stylesheet" th:href="@{/css/style.css}">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet"
             required type="text/css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -37,7 +37,7 @@
             <div class="sidebar">
                 <div class="sidebar-menu">
                     <center class="profile">
-                        <img src="./assets/images/default-admin.png" alt="">
+                        <img th:src="@{/images/default-admin.png}" alt="">
                         <p>Administrateur</p>
                     </center>
                     <li class="item">
@@ -62,10 +62,10 @@
                         </a>
                         <div class="sub-menu">
                             <ul>
-                                <li><a href="naisance.html"><i class="fas font-family"></i><span>naissance</span></a>
+                                <li><a th:href="@{/naisance}"><i class="fas font-family"></i><span>naissance</span></a>
                                 </li>
-                                <li><a href="mariage.html"><i class="fas font-family"></i><span>mariage</span></a></li>
-                                <li><a href="deces.html"><i class="fas font-family"></i><span>deces</span></a>
+                                <li><a th:href="@{/mariage}"><i class="fas font-family"></i><span>mariage</span></a></li>
+                                <li><a th:href="@{/deces}"><i class="fas font-family"></i><span>deces</span></a>
                                 </li>
                             </ul>
                         </div>
@@ -76,8 +76,8 @@
                                     class="fas fa-chevron-down drop-down"></i></span>
                         </a>
                         <div class="sub-menu">
-                            <a href="mairie.html"><i class="fas fa-lock"></i><span>Ajouter une mairie</span></a>
-                            <a href="#"><i class="fas fa-lock"></i><span>consulter</span></a>
+                            <a th:href="@{/mairie}"><i class="fas fa-lock"></i><span>Ajouter une mairie</span></a>
+                         
                         </div>
                     </li>
                     <li class="item" id="user">
@@ -86,7 +86,7 @@
                                     class="fas fa-chevron-down drop-down"></i></span>
                         </a>
                         <div class="sub-menu">
-                            <a href="admin.html"><i class="fas fa-lock"><span>Ajouter un Administrateur</span></i></a>
+                            <a th:href="@{/admin}"><i class="fas fa-lock"><span>Ajouter un Administrateur</span></i></a>
                             <a href="#"><i class="fas fa-lock"><span>consulter</span></i></a>
                         </div>
                     </li>
@@ -98,7 +98,7 @@
 
                 <div class="modal">
                     <div class="pop">
-                        <form method="post">
+                        <form method="post" th:action="@{/saveDeath}" th:object="${death}">
                             <div class="close-modal">
                                 <span>&times;</span>
                             </div>
@@ -112,19 +112,19 @@
                             <div class="page" id="page1">
                                 <h4>Identité du defunt</h4>
                                 <div class="input">
-                                    <input type="text" id="nom">
+                                    <input th:field="*{nomDecede}" required type="text" id="nom">
                                     <label for="nom">nom du defunt</label>
                                 </div>
                                 <div class="input">
-                                    <input type="text" id="lieu">
+                                    <input th:field="*{lieuDeces}" required type="text" id="lieu">
                                     <label for="lieu">lieu du deces</label>
                                 </div>
                                 <div class="input">
-                                    <input type="text" id="age">
+                                    <input th:field="*{ageDecede}" required type="number" id="age">
                                     <label for="age">age du defunt</label>
                                 </div>
                                 <div class="input">
-                                    <input type="text" id="lieu">
+                                    <input th:field="*{domicileDecede}" required type="text" id="lieu">
                                     <label for="domicil">lieu du domicil du defunt</label>
                                 </div>
                                 <div class="submitbtn">
@@ -135,19 +135,19 @@
                             <div class="page" id="page2">
                                 <h4>Identité sur les parent du defunt</h4>
                                 <div class="input">
-                                    <input type="text" id="pere">
+                                    <input th:field="*{pere.nomPers}" required type="text" id="pere">
                                     <label for="nom pere">nom du pere du defunt</label>
                                 </div>
                                 <div class="input">
-                                    <input type="text" id="pere">
+                                    <input th:field="*{pere.lieuResidence}" required  type="text" id="pere">
                                     <label for="domicilié">lieu domicil du pere</label>
                                 </div>
                                 <div class="input">
-                                    <input type="text" id="mere">
+                                    <input th:field="*{mere.nomPers}" type="text" id="mere">
                                     <label for="nom mere">nom de la mere du defunt</label>
                                 </div>
                                 <div class="input">
-                                    <input type="text" id="mere">
+                                    <input th:field="*{mere.lieuResidence}" required  type="text" id="mere">
                                     <label for="domicilié">lieu domicil de la mère</label>
 
                                 </div>
@@ -160,27 +160,25 @@
                             <div class="page" id="page3">
                                 <h4>informations generale sur l'acte et la mairie</h4>
                                 <div class="input">
-                                    <input type="date" class="form-control" id="date">
+                                    <input th:field="*{dateFabriqueActe}" type="date" class="form-control" id="date">
                                     <label for="dresse">acte dressé le</label>
                                 </div>
                                 <div class="input">
-                                    <input type="text" id="declar">
+                                    <input th:field="*{nomDeclarant}" type="text" id="declar">
                                     <label for="declaration">nom declarant</label>
 
-                                </div>
+                                </div> 
                                 <div class="input">
-                                    <input type="text" id="office">
-                                    <label for="etat civil">nom officier d'etat civil</label>
-                                </div>
-                                
-                                <div class="input">
-                                    <input type="text" id="assité">
-                                    <label for="assisté">nom de l'assistant d'etat civil</label>
+                                    <label for="etat civil">nom du centre d'etat civil</label>
+                                	<br/>
+                                	<select th:field="*{commune}">
+                                     	<option th:each="commune : ${communeList}" th:value="${commune.id_commune}" th:text="${commune.nomCommune}"></option>
+                                     </select >
                                 </div>
 
                                 <div class="submitbtn">
                                     <button class="prev" type="button">Précédent</button>
-                                    <button class="fin">Terminer</button>
+                                    <button type="submit" class="fin">Terminer</button>
                                 </div>
                             </div>
                         </form>
@@ -204,27 +202,31 @@
                         <table id="tab">
                             <thead>
                                 <tr>
+                                	<th>Numero</th>
                                     <th>Nom</th>
-                                    <th class="pseudo">Prenom</th>
-                                    <th class="email">Date de naissance</th>
-                                    <th>Date de deces </th>
+                                    <th >Lieu de Deces</th>
+                                    <th>Age du decede </th>
+                                    <th>Nom du pere</th>
+                                    <th>Nom de la mere</th>
                                     <th colspan="2">
                                         action
                                     </th>
                                 </tr>
                             </thead>
-                            <tr>
-                                <td> Kotopi </td>
-                                <td> Margelan </td>
-                                <td> 10/20/1990 </td>
-                                <td> 10/20/2000 </td>
-                                <td>
-                                    <button>Suprimer</button>
-                                </td>
-                                <td>
-                                    <button>Editer</button>
-                                </td>
-                            </tr>
+                            <tr th:each="death : ${deathList}">
+							<td th:text="${death.id}"></td>
+							<td th:text="${death.nomDecede}"></td>
+							<td th:text="${death.ageDecede}"></td>
+							<td th:text="${death.pere.nomPers}"></td>
+							<td th:text="${death.mere.nomPers}"></td>
+							<td><a 
+									th:href="@{/deleteDeath/{id}(id=${death.id})}"
+									id="d" class="btn btn-danger">Suprimer
+							</a></td>
+							<td><a
+								href="#"
+								id="d" class="btn btn-success">editer</a></td>
+						</tr>
                         </table>
 
                     </article>
@@ -235,7 +237,7 @@
         </div>
         <!--wrapper end-->
 
-        <script required type="text/javascript" src="script.js">
+        <script required type="text/javascript" th:src="@{/js/script.js}">
         </script>
 
 

@@ -11,7 +11,7 @@ import javax.persistence.OneToOne;
 @Entity
 public class Person {
 	@Id
-	@GeneratedValue (strategy = GenerationType.AUTO)
+	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String nomPers;
 	private String lieuNaissance;
@@ -101,6 +101,14 @@ public class Person {
 	public Person() {
 		super();
 	}
+	@Override
+	public String toString() {
+		return "Person [id=" + id + ", nomPers=" + nomPers + ", lieuNaissance=" + lieuNaissance + ", dateNaissance="
+				+ dateNaissance + ", lieuResidence=" + lieuResidence + ", profession=" + profession + ", nationalite="
+				+ nationalite + "]";
+	}
+	
+	
 	
 }
 	
