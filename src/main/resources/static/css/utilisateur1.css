@@ -220,7 +220,7 @@ body {
     /* background-color: red; */
     height: 50%;
     width: 100%;
-    background: url("imgapp/baby.jpg")no-repeat;
+    background: url("imgapp/baby.jpg") no-repeat;
     background-size: cover;
     justify-content: center;
     font-family: arial;

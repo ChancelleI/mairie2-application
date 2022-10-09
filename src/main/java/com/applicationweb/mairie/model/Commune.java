@@ -25,9 +25,6 @@ public class Commune {
 	
 	@ManyToOne  @JoinColumn(name = "id_Department ", nullable=false)
 	private Department department ;
-	
-//	@OneToMany @JoinColumn(name ="id_Commune") 
-//	private List<User> users = new ArrayList<>();
 
 	public Long getId_commune() {
 		return id_commune;

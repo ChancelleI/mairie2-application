@@ -34,7 +34,7 @@
 				<ul>
 					<li><a class="menu-icon" href=""><i class="fas fa-search"></i></a></li>
 					<li><a class="menu-icon" href=""><i class="fas fa-bell"></i></a></li>
-					<li><a class="menu-icon" href=""><i
+					<li><a class="menu-icon" th:href="@{/login?logout}"><i
 							class="fas fa-power-off"></i></a></li>
 				</ul>
 			</div>
@@ -68,7 +68,7 @@
 							<li><a href="naisance.html"><i class="fas font-family"></i><span>naissance</span></a>
 							</li>
 							<li><a th:href="@{/mariage}"><i class="fas font-family"></i><span>mariage</span></a></li>
-							<li><a href="deces.html"><i class="fas font-family"></i><span>deces</span></a>
+							<li><a th:href="@{/deces}"><i class="fas font-family"></i><span>deces</span></a>
 							</li>
 						</ul>
 					</div></li>
@@ -110,26 +110,26 @@
 						<div class="page" id="page1">
 							<h4>Identité de l'epoux</h4>
 							<div class="input">
-								<input th:field="*{wedding.epoux.nomPers}" required type="text"
+								<input th:field="*{epoux.nomPers}" required type="text"
 									id="nom"> <label for="nom">Nom de l'epoux</label>
 							</div>
 							<div class="input">
-								<input th:field="*{wedding.epoux.dateNaissance}" required
+								<input th:field="*{epoux.dateNaissance}" required
 									type="date" id="date"> <label for="date">date
 									de naissance de l'epoux</label>
 							</div>
 							<div class="input">
-								<input th:field="*{wedding.epoux.lieuNaissance}" required
+								<input th:field="*{epoux.lieuNaissance}" required
 									type="text" id="lieu"> <label for="lieu">lieu
 									naissance epoux</label>
 							</div>
 							<div class="input">
-								<input th:field="*{wedding.epoux.profession}" required
+								<input th:field="*{epoux.profession}" required
 									type="text" id="prof"> <label for="profession">profession
 									epoux</label>
 							</div>
 							<div class="input">
-								<input th:field="*{wedding.epoux.nationalite}" required
+								<input th:field="*{epoux.nationalite}" required
 									type="text" id="nation"> <label for="nationalité">nationalité
 									epoux</label>
 							</div>
@@ -138,16 +138,16 @@
 									for="reference">document de reference epoux</label>
 							</div>
 							<div class="input">
-								<input th:field="*{wedding.epoux.lieuResidence}" required
+								<input th:field="*{epoux.lieuResidence}" required
 									type="text" id="nation"> <label for="domicile">domicilié
 									a</label>
 							</div>
 							<div class="input">
-								<input th:field="*{wedding.nomPereEpoux}" required type="text"
+								<input th:field="*{nomPereEpoux}" required type="text"
 									id="nation"> <label for="fils">fils de</label>
 							</div>
 							<div class="input">
-								<input th:field="*{wedding.nomMereEpoux}" required type="text"
+								<input th:field="*{nomMereEpoux}" required type="text"
 									id="nation"> <label for="et de">et de </label>
 							</div>
 							<div class="submitbtn">
@@ -159,26 +159,26 @@
 						<div class="page" id="page2">
 							<h4>Identité de l'epouse</h4>
 							<div class="input">
-								<input th:field="*{wedding.epouse.nomPers}" required type="text"
+								<input th:field="*{epouse.nomPers}" required type="text"
 									id="nom"> <label for="nom">Nom de l'epouse</label>
 							</div>
 							<div class="input">
-								<input th:field="*{wedding.epouse.dateNaissance}" required
+								<input th:field="*{epouse.dateNaissance}" required
 									type="date" id="date"> <label for="date">date
 									de naissance de l'epouse</label>
 							</div>
 							<div class="input">
-								<input th:field="*{wedding.epouse.lieuNaissance}" required
+								<input th:field="*{epouse.lieuNaissance}" required
 									type="text" id="lieu"> <label for="lieu">lieu
 									naissance epouse</label>
 							</div>
 							<div class="input">
-								<input th:field="*{wedding.epouse.profession}" required
+								<input th:field="*{epouse.profession}" required
 									type="text" id="prof"> <label for="profession">profession
 									epouse</label>
 							</div>
 							<div class="input">
-								<input th:field="*{wedding.epouse.nationalite}" required
+								<input th:field="*{epouse.nationalite}" required
 									type="text" id="nation"> <label for="nationalité">nationalité
 									epouse</label>
 							</div>
@@ -187,16 +187,16 @@
 									for="reference">document de reference epouse</label>
 							</div>
 							<div class="input">
-								<input th:field="*{wedding.epouse.lieuResidence}" required
+								<input th:field="*{epouse.lieuResidence}" required
 									type="text" id="nation"> <label for="domicile">domicilié
 									a</label>
 							</div>
 							<div class="input">
-								<input th:field="*{wedding.nomPereEpouse}" required type="text"
+								<input th:field="*{nomPereEpouse}" required type="text"
 									id="nation"> <label for="fils">fils de</label>
 							</div>
 							<div class="input">
-								<input th:field="*{wedding.nomMereEpouse}" required type="text"
+								<input th:field="*{nomMereEpouse}" required type="text"
 									id="nation"> <label for="et de">et de </label>
 							</div>
 							<div class="submitbtn">
@@ -208,40 +208,40 @@
 						<div class="page" id="page3">
 							<h4>informations generale sur l'acte et la mairie</h4>
 							<div class="input">
-								<input th:field="*{wedding.nomMereEpouse}" required type="text"
+								<input th:field="*{nomMereEpouse}" required type="text"
 									id="nation"> <label for="num">numero de l'acte</label>
 							</div>
 							<div class="input">
 								<label for="regime">regime de biens</label> <br> <select
-									th:field="*{wedding.regimeBien}" name="regime">
+									th:field="*{regimeBien}" name="regime">
 									<option value="Biens Communs">Biens Communs</option>
 									<option value="Biens Separes">Biens Separes</option>
 								</select> <br>
 							</div>
 							<div class="input">
 								<label for="systeme">systeme matrimonial</label> <br> <select
-									th:field="*{wedding.systemeMatrimonial}" name="systeme">
+									th:field="*{systemeMatrimonial}" name="systeme">
 									<option value="Polygamie">Polygamie</option>
 									<option value="Monogamie">Monogamie</option>
 								</select> <br>
 							</div>
 							<div class="input">
-								<input th:field="*{wedding.nomTemoinEpoux}" required type="text"
+								<input th:field="*{nomTemoinEpoux}" required type="text"
 									id="nation"> <label for="temoin">nom temoin de
 									l'epoux</label>
 							</div>
 							<div class="input">
-								<input th:field="*{wedding.nomTemoinEpouse}" required
+								<input th:field="*{nomTemoinEpouse}" required
 									type="text" id="nation"> <label for="temoin">nom
 									temoin de l'epouse</label>
 							</div>
 							<div class="input">
-								<input th:field="*{wedding.nomOfficier}" required type="text"
+								<input th:field="*{nomOfficier}" required type="text"
 									id="nation"> <label for="officier">nom officier
 									d'Etat-civil</label>
 							</div>
 							<div class="input">
-								<input th:field="*{wedding.nomAssistant}" required type="text"
+								<input th:field="*{nomAssistant}" required type="text"
 									id="nation"> <label for="Assisté">nom de
 									l'Assistant</label>
 							</div>
@@ -254,7 +254,7 @@
 								<label for="dresser">lieu de dressage de l'acte</label>
 							</div>
 							<div class="input">
-								<input th:field="*{wedding.dateMariage}" required type="date" id="nation"> <label
+								<input th:field="*{dateMariage}" required type="date" id="nation"> <label
 									for="date">Acte dresser le</label>
 							</div>
 							<div class="submitbtn">

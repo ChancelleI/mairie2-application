@@ -17,6 +17,9 @@ public class UserService_impl implements UserService {
 	
 	@Override
 	public User saveuser(User user) {
+		user.getRoles().forEach(role -> {
+			user.addRole(role);
+		});
 		return this.userRepository.save(user);
 	}
 	@Override

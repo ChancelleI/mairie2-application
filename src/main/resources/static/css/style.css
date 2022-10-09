@@ -278,7 +278,7 @@ header h3 {
 
 }
 
-.submitbtn button {
+.submitbtn button, .submitbtn input {
     height: 30px;
     width: 40%;
     border: none;
@@ -292,7 +292,7 @@ header h3 {
     background: #D7303A;
 }
 
-.submitbtn button:nth-child(2) {
+.submitbtn input:nth-child(2) {
 
     background: #3D775E;
 }

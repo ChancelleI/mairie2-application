@@ -32,7 +32,8 @@ public class Wedding extends Act {
 	private String nomMereEpoux;
 	private String nomPereEpouse;
 	private String nomMereEpouse;
-	
+
+
 	private String nomTemoinEpoux;
 	private String nomTemoinEpouse;
 	private String nomOfficier;
@@ -161,6 +162,23 @@ public class Wedding extends Act {
 		this.systemeMatrimonial = systemeMatrimonial;
 	}
 	
+	
+	public Person getEpoux() {
+		return epoux;
+	}
+
+	public void setEpoux(Person epoux) {
+		this.epoux = epoux;
+	}
+
+	public Person getEpouse() {
+		return epouse;
+	}
+
+	public void setEpouse(Person epouse) {
+		this.epouse = epouse;
+	}
+	
 	public Wedding(Commune commune, Person epoux, Person epouse, String nomPereEpoux, String nomMereEpoux,
 			String nomPereEpouse, String nomMereEpouse, String nomTemoinEpoux, String nomTemoinEpouse,
 			String nomOfficier, String nomAssistant, Date dateMariage, String photoCouple, List<Document> documents,
@@ -183,4 +201,7 @@ public class Wedding extends Act {
 		this.systemeMatrimonial = systemeMatrimonial;
 	}
 
+	public Wedding() {
+		super();
+	}
 }

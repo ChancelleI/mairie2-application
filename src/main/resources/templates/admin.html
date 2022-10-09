@@ -29,7 +29,7 @@
                     <ul>
                         <li><a class="menu-icon" href=""><i class="fas fa-search"></i></a></li>
                         <li><a class="menu-icon" href=""><i class="fas fa-bell"></i></a></li>
-                        <li><a class="menu-icon" href=""><i class="fas fa-power-off"></i></a></li>                    </ul>
+                        <li><a class="menu-icon" th:href="@{/login?logout}"><i class="fas fa-power-off"></i></a></li>                    </ul>
                 </div>
             </div>
             <!--header menu end-->
@@ -87,7 +87,6 @@
                         </a>
                         <div class="sub-menu">
                             <a th:href="@{/admin}"><i class="fas fa-lock"><span>Ajouter un Administrateur</span></i></a>
-                            <a href="#"><i class="fas fa-lock"><span>consulter</span></i></a>
                         </div>
                     </li>
                 </div>
@@ -98,7 +97,7 @@
 
                 <div class="modal">
                     <div class="pop">
-                        <form method="post">
+                        <form method="POST" th:action="@{/addUser}"  th:object="${user}">
                             <div class="close-modal">
                                 <span>&times;</span>
                             </div>
@@ -111,28 +110,34 @@
                                         <label> Nom *</label>
                                         <div>
                                             <i class="fa fa-user"></i>
-                                            <input type="text" placeholder="Entrer le nom" />
+                                            <input th:field="*{nom}" type="text" placeholder="Entrer le nom"  />
                                         </div>
                                     </div>
                                     <div class="input-container">
                                         <label> Genre *</label>
                                         <div>
                                             <i class="fa fa-user"></i>
-                                            <input type="text" placeholder="Entrer le Genre" />
+                                            <input  th:field="*{genre}" type="text" placeholder="Entrer le Genre" />
                                         </div>
                                     </div>
                                     <div class="input-container">
                                         <label> Role *</label>
                                         <div>
                                             <i class="fa fa-user"></i>
-                                            <input type="text" placeholder="Entrer le Role" />
+											<select multiple th:field="*{roles}" class="form-control">
+												<option th:each="role : ${roles}" 
+													th:value="${role.id}"
+													th:text="${role.typeRole}">
+												</option>
+											</select>
                                         </div>
+                                        
                                     </div>
                                     <div class="input-container">
                                         <label> Mot de passe *</label>
                                         <div>
                                             <i class="fa fa-user"></i>
-                                            <input type="text" placeholder="Entrer le mot de passe" />
+                                            <input  th:field="*{password}" type="text" placeholder="Entrer le mot de passe" />
                                         </div>
                                     </div>
                                 </div>
@@ -141,17 +146,17 @@
                                         <label> Prenom *</label>
                                         <div>
                                             <i class="fa fa-user"></i>
-                                            <input type="text" placeholder="Entrer le Prenom" />
+                                            <input  th:field="*{prenom}" type="text" placeholder="Entrer le Prenom" />
                                         </div>
                                     </div>
-                                    <div class="input-container">
+                                   <div class="input-container">
                                         <label> Numero de CNI ou recepicer *</label>
                                         <div>
                                             <i class="fa fa-user"></i>
-                                            <input type="text" placeholder="Entrer le Numero de Cni" />
+                                            <input th:field="*{numeroCni}" type="text" placeholder="Entrer le Numero de Cni" />
                                         </div>
                                     </div>
-                                    <!-- <div class="input-container">
+                                      <!-- <div class="input-container">
                                           <label> Compte *</label>
                                           <div>
                                                <i class="fa fa-user"></i>
@@ -162,14 +167,14 @@
                                         <label> Residence *</label>
                                         <div>
                                             <i class="fa fa-home"></i>
-                                            <input type="text" placeholder="Entrer votre Residence" />
+                                            <input  th:field="*{residence}" type="text" placeholder="Entrer votre Residence" />
                                         </div>
                                     </div>
                                     <div class="input-container">
                                         <label> Email </label>
                                         <div>
                                             <i class="fa fa-mail-bulk"></i>
-                                            <input type="email" placeholder="Entrer votre Email" />
+                                            <input  th:field="*{email}" type="email" placeholder="Entrer votre Email" />
                                         </div>
                                     </div>
                                 </div>
@@ -178,7 +183,7 @@
                                         <label> Date de Naisance *</label>
                                         <div>
                                             <i class="fa fa-calendar-times"></i>
-                                            <input type="date" placeholder="Entrer votre Email" />
+                                            <input  th:field="*{dateNaissance}" type="date" placeholder="Entrer votre Email" />
                                         </div>
                                     </div>
 
@@ -193,29 +198,33 @@
                                         <label> Login *</label>
                                         <div>
                                             <i class="fa fa-user"></i>
-                                            <input type="text" placeholder="Entrer votre Login" />
+                                            <input  th:field="*{login}" type="text" placeholder="Entrer votre Login" />
                                         </div>
                                     </div>
                                     <div class="input-container">
                                         <label> Telephone *</label>
                                         <div>
                                             <i class="fa fa-phone"></i>
-                                            <input type="text" placeholder="Entrer votre Telephone" />
+                                            <input  th:field="*{telephone}" type="text" placeholder="Entrer votre Telephone" />
                                         </div>
                                     </div>
                                     <div class="input-container">
-                                        <label> Telephone d'urgence *</label>
+                                        <label> Communes *</label>
                                         <div>
                                             <i class="fa fa-phone"></i>
-                                            <input type="text" placeholder="Entrer le mot de passe" />
+                                            <select th:field="*{commune}" class="form-control">
+												<option th:each="commune : ${communes}" 
+													th:value="${commune.id_commune}"
+													th:text="${commune.nomCommune}">
+												</option>
+											</select>
                                         </div>
                                     </div>
-
                                 </div>
                             </div>
                             <div class="submitbtn" style="margin:20px 0 ;">
-                                <button  type="button">Anuller</button>
-                                <button class="fin">Creer</button>
+                                <button  type="reset">Annuler</button>
+                                <input type="submit" value="Creer"/>
                             </div>
                         </form>
 

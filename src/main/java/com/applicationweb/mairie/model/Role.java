@@ -1,7 +1,5 @@
 package com.applicationweb.mairie.model;
 
-
-
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -10,43 +8,53 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 
-import com.applicationweb.mairie.TypeRole;
-
-
-
 @Entity
 public class Role {
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
-	private Long id_Role;
+	private Long id;
 	
-	@Enumerated(EnumType.STRING)
-	private TypeRole typeRole;
-	
-	//private List<User> users = new ArrayList<>();
-	
-	
-	public Long getIdRole() {
-		return id_Role;
+	private String typeRole;
+
+	public Role() {
+		super();
 	}
-	public void setIdRole(Long id_Role) {
-		this.id_Role = id_Role;
+	
+	public Long getId() {
+		return id;
 	}
-	public TypeRole getTypeRole() {
+
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+
+	public String getTypeRole() {
 		return typeRole;
 	}
-	public void setTypeRole(TypeRole typeRole) {
+
+
+	public void setTypeRole(String typeRole) {
 		this.typeRole = typeRole;
 	}
-	
-	
-	public Role(TypeRole typeRole) {
+
+
+	public void setType_role(String type_role) {
+		this.typeRole = type_role;
+	}
+
+	public Role(Long id, String typeRole) {
 		super();
+		this.id = id;
 		this.typeRole = typeRole;
-		
+	}
+
+	@Override
+	public String toString() {
+		return "Role [id=" + id + ", typeRole=" + typeRole + "]";
 	}
 	
 	
-	
-	}
+}
 	

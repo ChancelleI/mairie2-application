@@ -125,7 +125,8 @@
 										<select th:field="*{department}">
 											<option th:each="department : ${departmentList}"
 												th:value="${department.id}"
-												th:text="${department.nomDepartement}"></option>
+												th:text="${department.nomDepartement}">
+											</option>
 										</select>
 
 									</div>

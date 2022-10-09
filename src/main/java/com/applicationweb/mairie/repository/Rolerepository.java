@@ -7,5 +7,6 @@ import com.applicationweb.mairie.model.Role;
 
 @Repository
 public interface Rolerepository extends JpaRepository<Role, Long> {
+	Boolean existsByTypeRole(String typeRole);
 
 }

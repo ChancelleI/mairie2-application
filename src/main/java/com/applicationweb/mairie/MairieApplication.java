@@ -1,5 +1,8 @@
 package com.applicationweb.mairie;
 
+import java.util.Iterator;
+import java.util.stream.Stream;
+
 //import org.apache.tomcat.jni.Address;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -10,10 +13,12 @@ import com.applicationweb.mairie.model.Department;
 import com.applicationweb.mairie.model.Region;
 import com.applicationweb.mairie.repository.Departmentrepository;
 import com.applicationweb.mairie.repository.Regionrepository;
+import com.applicationweb.mairie.repository.Rolerepository;
 import com.applicationweb.mairie.service.AddressService;
 import com.applicationweb.mairie.service.CommuneService;
 import com.applicationweb.mairie.service.DepartmentService;
 import com.applicationweb.mairie.service.RegionService;
+import com.applicationweb.other.models.Role;
 
 @SpringBootApplication
 public class MairieApplication implements CommandLineRunner {
@@ -23,6 +28,9 @@ public class MairieApplication implements CommandLineRunner {
 	
 	@Autowired
 	private Regionrepository regionrepository;
+	
+	@Autowired
+	private Rolerepository rolerepository;
 
 	@Autowired
 	public DepartmentService departmentService;
@@ -67,8 +75,15 @@ public class MairieApplication implements CommandLineRunner {
 			}
 		}
 		
+		String roles[] ={ "MAIRE" , "SECRETAIRE"};
 		
-		
+		for (String role : roles) {
+			if(rolerepository.existsByTypeRole(role)) {
+				System.out.println("Role :" +role+" already exists!");
+			} else {
+				rolerepository.save(new com.applicationweb.mairie.model.Role(null, role));
+			}
+		}
 		
 		
 		// Address ad = new Address();

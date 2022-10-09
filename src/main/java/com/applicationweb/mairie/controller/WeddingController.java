@@ -33,8 +33,8 @@ public class WeddingController {
 	@RequestMapping(value = "/mariage", method = RequestMethod.GET)
 	public String wedding(Model model) {
 
-		Wedding wedding = new Wedding(null, null, null, null, null, null, null, null, null, null, null, null, null, null,
-				null, null);
+		Wedding wedding = new Wedding();
+		
 		model.addAttribute("wedding", wedding);
 
 		List<Wedding> list = weddingService.getAllWedding();
